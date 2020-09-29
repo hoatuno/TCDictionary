@@ -1,42 +1,45 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Dictionary {
+   List<Word> wordList = new ArrayList<>();
+     class DictionaryManagement {
+        Dictionary dictionary = new Dictionary();
 
-    public static void main(String[] args) throws IOException {
-        // Đọc dữ liệu
-        FileReader fis = new FileReader("E_V.txt");
-        BufferedReader br = new BufferedReader(fis);
-        List<Word> wordList = new ArrayList<Word>();
-        String line;
-        int i = 0;
-        while ((line = br.readLine()) != null) {
-            String[] parts = line.split("<html>");
-            String word = parts[0];
-            String definition = "<html>" + parts[1];
-            System.out.println(word);
-            System.out.println("==> " + definition);
-            Word wordObj = new Word(word, definition);
-            wordList.add(wordObj);
-            i++;
-            if (i > 5) break;
-        }
+        public void insertFromCommandLine() {
 
-        // Cập nhật 1 từ
-        for (Word word : wordList) {
-            if (word.getWord().equals("-manship")) {
-                word.setDef("<html>Nghĩa mới</html>");
             }
         }
-        FileWriter fw = new FileWriter("E_V.txt");
-        BufferedWriter bw = new BufferedWriter(fw);
-        for (Word word : wordList) {
-            bw.write(word.getWord() + word.getDef() + "\n");
-        }
-        bw.flush();
-        bw.close();
     }
+    class DictionaryCommandline {
+
+        Dictionary dictionary = new Dictionary();
+
+        public void showAllWords() {
+            for(int i=0; i< dictionary.wordList.size(); i++) {
+                String wd = dictionary.wordList.get(i).getWord();
+                String def = dictionary.wordList.get(i).getDef();
+                System.out.println(i+1 + "      | " + "wd" + "            | " + "def");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Dictionary dictionary = new Dictionary();
+
+        Scanner scanner = new Scanner(System.in);
+        int numofWords = scanner.nextInt();
+        scanner.nextLine();
+        while (numofWords > 0) {
+
+            String word = scanner.nextLine();
+            String def = scanner.nextLine();
+            Word wordObj = new Word(word, def);
+            dictionary.wordList.add(wordObj);
+            numofWords--;
+
+        //dcl.showAllWords();
+    }
+
 }
 
 class Word {
@@ -64,3 +67,9 @@ class Word {
         this.def = def;
     }
 }
+
+
+
+
+
+
