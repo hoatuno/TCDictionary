@@ -12,6 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        try{
         URL newURL = new File("F:\\OOP\\project\\src\\Application\\sample.fxml").toURI().toURL();
 //        Parent root = FXMLLoader.load(newURL); F:\OOP\project\src
 
@@ -19,6 +20,9 @@ public class Main extends Application {
         primaryStage.setTitle("TCDICTIONARY");
         primaryStage.setScene(new Scene(root, 670, 600));
         primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 

@@ -1,3 +1,6 @@
+package core;
+
+
 public class Word {
 
     private String word;

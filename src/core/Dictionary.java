@@ -1,5 +1,8 @@
+package core;
+
 import java.io.*;
 import java.util.*;
+import edu.princeton.cs.algs4.*;
 
 public class Dictionary {
     Scanner scanner = new Scanner(System.in);
@@ -25,6 +28,7 @@ public class Dictionary {
             System.out.println(i + 1 + "      | " + wd + "            | " + def);
         }
     }
+
 
     // read in data from .txt file, tab delimiter.
 
@@ -113,6 +117,19 @@ public class Dictionary {
                 System.out.println(wordList.get(i).getDef());
             }
         }
+    }
+    public  String searchWord(String word) {
+        int size = wordList.size();
+        String[] listofword = new String[wordList.size()];
+        for (int i = 0; i < wordList.size(); i++) {
+            listofword[i] = wordList.get(i).getWord();
+        }
+        for(int i=0; i<size; i++) {
+            if (listofword[i].equals(word)) {
+                return wordList.get(i).getDef();
+            }
+        }
+        return "404 not found";
     }
 
     public static void main(String[] args) throws IOException {

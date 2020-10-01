@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
    <Group>
       <children>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" stroke="BLACK" strokeType="INSIDE" width="673.0">
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="630.0" stroke="BLACK" strokeType="INSIDE" width="673.0">
             <fill>
                <LinearGradient startY="0.4380952380952381">
                   <stops>
@@ -27,24 +27,30 @@
          </Rectangle>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3f9ff" height="408.0" layoutX="261.0" layoutY="111.0" stroke="WHITE" strokeType="INSIDE" width="378.0" />
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6faff" height="408.0" layoutX="29.0" layoutY="111.0" stroke="WHITE" strokeType="INSIDE" width="220.0" />
-         <TextFlow layoutX="39.0" layoutY="127.0" prefHeight="376.0" prefWidth="200.0" />
-         <TextFlow layoutX="280.0" layoutY="164.0" prefHeight="62.0" prefWidth="324.0" />
-         <TextFlow layoutX="280.0" layoutY="127.0" prefHeight="37.0" prefWidth="280.0" />
+         <TextFlow layoutX="280.0" layoutY="127.0" prefHeight="96.0" prefWidth="344.0">
+            <children>
+               <Text fx:id="myWord" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="91.13671875">
+                  <font>
+                     <Font name="System Bold" size="21.0" />
+                  </font>
+               </Text>
+            </children></TextFlow>
+         <TextFlow layoutX="29.0" layoutY="127.0" prefHeight="376.0" prefWidth="200.0" />
       </children>
    </Group>
-   <Button layoutX="258.0" layoutY="70.0" mnemonicParsing="false" mouseTransparent="true" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: #d24dff; -fx-border-radius: 20; -fx-border-image-slice: 10; -fx-background-radius: 20; -fx-cursor: pointer;" text="TRANSLATE">
+   <Button id="word" layoutX="258.0" layoutY="70.0" mnemonicParsing="false" onAction="#Submit" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: #d24dff; -fx-border-radius: 20; -fx-border-image-slice: 10; -fx-background-radius: 20; -fx-cursor: pointer;" text="TRANSLATE">
       <font>
-         <Font name=".VnArial Bold Italic" size="14.0" />
+         <Font name="Calibri Bold" size="17.0" />
       </font>
    </Button>
-   <TextField layoutX="30.0" layoutY="70.0" prefHeight="30.0" prefWidth="220.0" promptText="  Type your word" style="-fx-background-radius: 20;">
+   <TextField fx:id="word" layoutX="30.0" layoutY="70.0" onAction="#Submit" prefHeight="30.0" prefWidth="220.0" promptText="  Type your word" style="-fx-background-radius: 20;">
       <font>
          <Font size="14.0" />
       </font>
    </TextField>
    <Group layoutX="30.0" layoutY="35.0">
       <children>
-         <Text layoutY="-1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TCDictionary">
+         <Text layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TCDictionary">
             <font>
                <Font name="Arial Bold" size="25.0" />
             </font>
