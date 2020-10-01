@@ -119,12 +119,12 @@ public class Dictionary {
         Dictionary dict = new Dictionary();
 
 
-        dict.insertFromFile("D:\\New folder\\src\\data.txt");
+        dict.insertFromFile("F:\\OOP\\project\\src\\data.txt");
         //dict.DictionarySearcher();
         //System.out.println(dict.wordList.size());
         dict.showAllWords();
         //dict.DictionaryLookUp();
-        dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+        dict.exportToFile("F:\\OOP\\project\\src\\out-data.txt");
     }
 
     //public void dictionaryBasic() {
