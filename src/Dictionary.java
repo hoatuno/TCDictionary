@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+
 public class Dictionary {
     Scanner scanner = new Scanner(System.in);
     public List<Word> wordList = new ArrayList<>();
@@ -59,8 +60,7 @@ public class Dictionary {
         try {
             File file = new File(filepath);
             FileWriter fileWriter = new FileWriter(file);
-            for (int i = 0, wordListSize = wordList.size(); i < wordListSize; i++) {
-                Word value = wordList.get(i);
+            for (Word value : wordList) {
                 String word = value.getWord();
                 String def = value.getDef();
                 String tab = "\t";
@@ -118,13 +118,17 @@ public class Dictionary {
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
 
-
-        dict.insertFromFile("D:\\New folder\\src\\data.txt");
+        dict.getAll("D:\\New folder\\src\\dat.txt");
+        //dict.insertFromFile("D:\\New folder\\src\\data.txt");
         //dict.DictionarySearcher();
-        //System.out.println(dict.wordList.size());
-        dict.showAllWords();
+        System.out.println(dict.wordList.size());
+        //dict.showAllWords();
         //dict.DictionaryLookUp();
-        dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+        //dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+    }
+
+    public void getAll(String filepath) {
+        
     }
 
     //public void dictionaryBasic() {
