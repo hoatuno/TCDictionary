@@ -143,35 +143,23 @@ public class Dictionary {
                 words.add(resultSet.getString("word"));
 
             }
+            Collections.sort(words);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    static int binSe(List<String> words, String toFind) {
-        int l = 0;
-        int r = words.size()-1;
-        while (l <= r) {
-            int m = l + (r -1)/2;
-            int res = toFind.compareTo(words.get(m));
-            if (res == 0) return m;
-            if (res > 0) {
-                l = m+1;
-            }
-            else r = m - 1;
-        }
-        return -1;
-    }
     public String queryforHtml(String toFind) {
 
         String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
-        String sql = "SELECT word, html FROM av";
+        String sql = "SELECT id, html FROM av";
+        int id = Collections.binarySearch(words, toFind);
         try {
             Connection connection = DriverManager.getConnection(url);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-                if (resultSet.getString("word").equals(toFind)) return resultSet.getString("html");
+                if (resultSet.getInt("id") == id) return resultSet.getString("html");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -181,7 +169,12 @@ public class Dictionary {
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
         dict.insertFromSQLiteDatabase();
-        System.out.println(dict.queryforHtml("aard-wolf"));
+        System.out.println(Collections.binarySearch(dict.words, "'cellist"));
+
+
+
+
+
     }
 
 
