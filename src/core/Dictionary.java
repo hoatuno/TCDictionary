@@ -2,12 +2,13 @@ package core;
 
 import java.io.*;
 import java.util.*;
-import edu.princeton.cs.algs4.*;
+import java.sql.*;
 
 
 public class Dictionary {
     Scanner scanner = new Scanner(System.in);
     public List<Word> wordList = new ArrayList<>();
+    public List<String> words = new ArrayList<>();
 
     public void insertFromCommandLine() {
 
@@ -131,36 +132,64 @@ public class Dictionary {
         }
         return "404 not found";
     }
+    public void insertFromSQLiteDatabase() {
+        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+        String sql = "SELECT word FROM av";
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                words.add(resultSet.getString("word"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
+    static int binSe(List<String> words, String toFind) {
+        int l = 0;
+        int r = words.size()-1;
+        while (l <= r) {
+
+            int m = l + (r -1)/2;
+            int res = toFind.compareTo(words.get(m));
+            if (res == 0) return m;
+            if (res > 0) {
+                l = m+1;
+            }
+            else r = m - 1;
+        }
+        return -1;
+    }
+    public String queryforHtml(String toFind) {
+        int id = binSe(words, toFind);
+        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+        String html ="";
+        String sql = "SELECT id, html FROM av";
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                if (resultSet.getInt("id") == id) return resultSet.getString("html");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return "";
+    }
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
-
-<<<<<<< HEAD:src/core/Dictionary.java
-
-        dict.insertFromFile("F:\\OOP\\project\\src\\data.txt");
-=======
-        dict.getAll("D:\\New folder\\src\\dat.txt");
-        //dict.insertFromFile("D:\\New folder\\src\\data.txt");
->>>>>>> 4178cc942c48f23405b934753cb6be3e8131b542:src/Dictionary.java
-        //dict.DictionarySearcher();
-        System.out.println(dict.wordList.size());
-        //dict.showAllWords();
-        //dict.DictionaryLookUp();
-<<<<<<< HEAD:src/core/Dictionary.java
-        dict.exportToFile("F:\\OOP\\project\\src\\out-data.txt");
-=======
-        //dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+        dict.insertFromSQLiteDatabase();
+        System.out.println(dict.queryforHtml("zoom"));
     }
 
-    public void getAll(String filepath) {
-        
->>>>>>> 4178cc942c48f23405b934753cb6be3e8131b542:src/Dictionary.java
-    }
-
-    //public void dictionaryBasic() {
 
 
-    //}
+
+
+
 }
 
 
