@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$USER_HOME$/Downloads/dict_hh.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="dictdata" uuid="79a3806c-a57a-4f36-9de2-9d2e4bd53481">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/dict_hh.db</jdbc-url>
+    </data-source>
   </component>
 </project>

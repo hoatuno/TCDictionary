@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/core/dat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/core/out-data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/dict_hh.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +90,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -87,12 +99,14 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/algs4.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sqlite-jdbc-3.32.3.2.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -101,7 +115,7 @@
       <recent name="F:\OOP\project\src\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Dictionary (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -126,6 +140,20 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
+    </configuration>
+    <configuration name="Dictionary (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="core.Dictionary" />
+      <module name="project" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Dictionary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Dictionary" />
@@ -171,6 +199,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -206,9 +245,11 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Dictionary" />
       <item itemvalue="Application.test" />
+      <item itemvalue="Application.Dictionary (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Dictionary (1)" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Dictionary" />
       </list>
@@ -229,6 +270,9 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
@@ -241,6 +285,14 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="309" y="47" key="#Inspections/0.0.1366.738@0.0.1366.738" timestamp="1601526992624" />
+    <state x="72" y="205" key="#SQL_Dialects" timestamp="1602009123548">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="72" y="205" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1602009123548" />
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602006873956">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602006873956" />
     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1601650842100">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -249,29 +301,35 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1601525266411" />
-    <state x="410" y="110" key="FileChooserDialogImpl" timestamp="1601543324368">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="410" y="109" key="FileChooserDialogImpl" timestamp="1602006854539">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="410" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602006854539" />
     <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1601543324368" />
-    <state width="1323" height="130" key="GridCell.Tab.0.bottom" timestamp="1601654668415">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1602009098111">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602009098111" />
     <state width="1323" height="130" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state width="1323" height="130" key="GridCell.Tab.0.center" timestamp="1601654668415">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1602009098111">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602009098111" />
     <state width="1323" height="130" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state width="1323" height="130" key="GridCell.Tab.0.left" timestamp="1601654668414">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1602009098110">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602009098110" />
     <state width="1323" height="130" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601654668414" />
-    <state width="1323" height="130" key="GridCell.Tab.0.right" timestamp="1601654668415">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1602009098111">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602009098111" />
     <state width="1323" height="130" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1601632772273">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1602006857979">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602006857979" />
     <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601632772273" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1601527828316">
       <screen x="0" y="0" width="1366" height="738" />

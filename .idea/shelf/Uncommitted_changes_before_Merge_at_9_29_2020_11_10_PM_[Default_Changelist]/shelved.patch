@@ -1,0 +1,18 @@
+Index: src/Dictionary.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.*;\r\nimport java.util.*;\r\n\r\npublic class Dictionary {\r\n   List<Word> wordList = new ArrayList<>();\r\n     class DictionaryManagement {\r\n        Dictionary dictionary = new Dictionary();\r\n\r\n        public void insertFromCommandLine() {\r\n\r\n            }\r\n        }\r\n    }\r\n    class DictionaryCommandline {\r\n\r\n        Dictionary dictionary = new Dictionary();\r\n\r\n        public void showAllWords() {\r\n            for(int i=0; i< dictionary.wordList.size(); i++) {\r\n                String wd = dictionary.wordList.get(i).getWord();\r\n                String def = dictionary.wordList.get(i).getDef();\r\n                System.out.println(i+1 + \"      | \" + \"wd\" + \"            | \" + \"def\");\r\n            }\r\n        }\r\n    }\r\n    public static void main(String[] args) {\r\n        Dictionary dictionary = new Dictionary();\r\n\r\n        Scanner scanner = new Scanner(System.in);\r\n        int numofWords = scanner.nextInt();\r\n        scanner.nextLine();\r\n        while (numofWords > 0) {\r\n\r\n            String word = scanner.nextLine();\r\n            String def = scanner.nextLine();\r\n            Word wordObj = new Word(word, def);\r\n            dictionary.wordList.add(wordObj);\r\n            numofWords--;\r\n\r\n        //dcl.showAllWords();\r\n    }\r\n\r\n}\r\n\r\nclass Word {\r\n    private String word;\r\n    private String def;\r\n\r\n    public Word(String word, String def) {\r\n        this.word = word;\r\n        this.def = def;\r\n    }\r\n\r\n    public String getWord() {\r\n        return word;\r\n    }\r\n\r\n    public void setWord(String word) {\r\n        this.word = word;\r\n    }\r\n\r\n    public String getDef() {\r\n        return def;\r\n    }\r\n\r\n    public void setDef(String def) {\r\n        this.def = def;\r\n    }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Dictionary.java	(revision c618052ee8672c6eca4cc57ba9d50f2954a306e7)
++++ src/Dictionary.java	(date 1601394965793)
+@@ -19,7 +19,7 @@
+             for(int i=0; i< dictionary.wordList.size(); i++) {
+                 String wd = dictionary.wordList.get(i).getWord();
+                 String def = dictionary.wordList.get(i).getDef();
+-                System.out.println(i+1 + "      | " + "wd" + "            | " + "def");
++                System.out.println(i+1 + "      | " + wd + "            | " + def);
+             }
+         }
+     }

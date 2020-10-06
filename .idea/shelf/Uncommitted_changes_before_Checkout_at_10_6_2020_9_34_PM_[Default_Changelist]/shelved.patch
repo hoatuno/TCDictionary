@@ -1,0 +1,175 @@
+Index: TCDIctionary.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"CheckStyle-IDEA-Module\">\r\n    <option name=\"configuration\">\r\n      <map />\r\n    </option>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- TCDIctionary.iml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
++++ TCDIctionary.iml	(date 1601647161513)
+@@ -12,5 +12,14 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.32.3.2.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/sqldialects.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/sqldialects.xml	(date 1601650511314)
++++ .idea/sqldialects.xml	(date 1601650511314)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="SqlDialectMappings">
++    <file url="file://$PROJECT_DIR$/src/Dictionary.java" dialect="GenericSQL" />
++    <file url="PROJECT" dialect="SQLite" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Dictionary.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.*;\r\nimport java.util.*;\r\n\r\n\r\npublic class Dictionary {\r\n    Scanner scanner = new Scanner(System.in);\r\n    public List<Word> wordList = new ArrayList<>();\r\n\r\n    public void insertFromCommandLine() {\r\n\r\n        int numofWords = scanner.nextInt();\r\n        scanner.nextLine();\r\n        while (numofWords > 0) {\r\n            String word = scanner.nextLine();\r\n            String def = scanner.nextLine();\r\n            Word wordObj = new Word(word, def);\r\n            wordList.add(wordObj);\r\n            numofWords--;\r\n        }\r\n    }\r\n\r\n    public void showAllWords() {\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            String wd = wordList.get(i).getWord();\r\n            String def = wordList.get(i).getDef();\r\n            System.out.println(i + 1 + \"      | \" + wd + \"            | \" + def);\r\n        }\r\n    }\r\n\r\n    // read in data from .txt file, tab delimiter.\r\n\r\n    public void insertFromFile(String filename) {\r\n        BufferedReader bufferedReader = null;\r\n        try {\r\n            bufferedReader = new BufferedReader(new FileReader(filename));\r\n            String content = bufferedReader.readLine();\r\n            while (content != null) {\r\n                //System.out.println(content);\r\n                String[] splitcontent = content.split(\"\\\\t\", -1);\r\n                String word = splitcontent[0];\r\n                String def = splitcontent[1];\r\n                Word wordobj = new Word(word, def);\r\n                wordList.add(wordobj);\r\n                content = bufferedReader.readLine();\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        } finally {\r\n            try {\r\n                if (bufferedReader != null)\r\n                    bufferedReader.close();\r\n            } catch (IOException ex) {\r\n                ex.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    public void exportToFile(String filepath) {\r\n        int l = wordList.size();\r\n        try {\r\n            File file = new File(filepath);\r\n            FileWriter fileWriter = new FileWriter(file);\r\n            for (Word value : wordList) {\r\n                String word = value.getWord();\r\n                String def = value.getDef();\r\n                String tab = \"\\t\";\r\n                String ln = \"\\n\";\r\n                fileWriter.write(word);\r\n                fileWriter.write(tab);\r\n                fileWriter.write(def);\r\n                fileWriter.write(ln);\r\n            }\r\n            fileWriter.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void DictionarySearcher() {\r\n        Scanner scanner = new Scanner(System.in);\r\n        String lookfor = scanner.nextLine();\r\n        int l = lookfor.length();\r\n        String[] listofword = new String[wordList.size()];\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            listofword[i] = wordList.get(i).getWord();\r\n        }\r\n        // if every lookfor's char == first lookfor.length characters of a word, print out the word.\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            // ignore word with less characters than that of the string requested.\r\n            if (listofword[i].length() >= l) {\r\n                int cnt = 0;\r\n                for (int j = 0; j < l; j++) {\r\n                    if (listofword[i].charAt(j) == lookfor.charAt(j)) {\r\n                        cnt++;\r\n                    }\r\n                }\r\n                if (cnt == l) System.out.println(listofword[i]);\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    public void DictionaryLookUp() {\r\n\r\n        String word = scanner.nextLine();\r\n        int size = wordList.size();\r\n        String[] listofword = new String[wordList.size()];\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            listofword[i] = wordList.get(i).getWord();\r\n        }\r\n        for(int i=0; i<size; i++) {\r\n            if (listofword[i].equals(word)) {\r\n                System.out.println(wordList.get(i).getDef());\r\n            }\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) throws IOException {\r\n        Dictionary dict = new Dictionary();\r\n\r\n        dict.getAll(\"D:\\\\New folder\\\\src\\\\dat.txt\");\r\n        //dict.insertFromFile(\"D:\\\\New folder\\\\src\\\\data.txt\");\r\n        //dict.DictionarySearcher();\r\n        System.out.println(dict.wordList.size());\r\n        //dict.showAllWords();\r\n        //dict.DictionaryLookUp();\r\n        //dict.exportToFile(\"D:\\\\New folder\\\\src\\\\out-data.txt\");\r\n    }\r\n\r\n    public void getAll(String filepath) {\r\n        \r\n    }\r\n\r\n    //public void dictionaryBasic() {\r\n\r\n\r\n    //}\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Dictionary.java	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
++++ src/Dictionary.java	(date 1601994821312)
+@@ -1,6 +1,8 @@
++
++
+ import java.io.*;
+ import java.util.*;
+-
++import java.sql.*;
+ 
+ public class Dictionary {
+     Scanner scanner = new Scanner(System.in);
+@@ -108,34 +110,43 @@
+         for (int i = 0; i < wordList.size(); i++) {
+             listofword[i] = wordList.get(i).getWord();
+         }
+-        for(int i=0; i<size; i++) {
++        for (int i = 0; i < size; i++) {
+             if (listofword[i].equals(word)) {
+                 System.out.println(wordList.get(i).getDef());
+             }
+         }
+     }
+ 
+-    public static void main(String[] args) throws IOException {
++    public static void main(String[] args) throws IOException, SQLException {
+         Dictionary dict = new Dictionary();
+-
+-        dict.getAll("D:\\New folder\\src\\dat.txt");
+-        //dict.insertFromFile("D:\\New folder\\src\\data.txt");
+-        //dict.DictionarySearcher();
+-        System.out.println(dict.wordList.size());
+-        //dict.showAllWords();
+-        //dict.DictionaryLookUp();
+-        //dict.exportToFile("D:\\New folder\\src\\out-data.txt");
++        System.out.print(dict.queryforHtml("zoom"));
++//        dict.getAll();
++//        dict.insertFromFile("D:\\New folder\\src\\data.txt");
++//        dict.DictionarySearcher();
++//        System.out.println(dict.wordList.size());
++//        dict.showAllWords();
++//        dict.DictionaryLookUp();
++//        dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+     }
+ 
+-    public void getAll(String filepath) {
+-        
++    // get HTML representation of the word
++    public String queryforHtml(String wordtoFind) throws SQLException{
++        String sql = "SELECT id, word, html FROM av";
++        String url = "jdbc:sqlite:D:\\Dictionary\\src\\dict_hh.db";
++        Connection connection = DriverManager.getConnection(url);
++        Statement statement = connection.createStatement();
++        ResultSet resultSet = statement.executeQuery(sql);
++        while (resultSet.next()) {
++            if (resultSet.getString("word").equals(wordtoFind)) {
++                return resultSet.getString("html");
++                //resultSet.getInt("id");
++            }
++        }
++        return "";
+     }
+-
+-    //public void dictionaryBasic() {
++}
+ 
+ 
+-    //}
+-}
+ 
+ 
+ 
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\">\r\n    <data-source name=\"datasource\" uuid=\"43e66c95-f8ba-4300-aac7-b0521f8f3772\">\r\n      <database-info product=\"SQLite\" version=\"3.31.1\" jdbc-version=\"2.1\" driver-name=\"SQLite JDBC\" driver-version=\"3.31.1\" dbms=\"SQLITE\" exact-version=\"3.31.1\" exact-driver-version=\"3.31\">\r\n        <identifier-quote-string>&quot;</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <auth-provider>no-auth</auth-provider>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.local.xml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
++++ .idea/dataSources.local.xml	(date 1601652158712)
+@@ -14,5 +14,17 @@
+         </introspection-scope>
+       </schema-mapping>
+     </data-source>
++    <data-source name="dict_hh" uuid="47e91fdf-edee-4fbe-aa63-b543997a0427">
++      <database-info product="SQLite" version="3.31.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.31.1" dbms="SQLITE" exact-version="3.31.1" exact-driver-version="3.31">
++        <identifier-quote-string>&quot;</identifier-quote-string>
++      </database-info>
++      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
++      <auth-provider>no-auth</auth-provider>
++      <schema-mapping>
++        <introspection-scope>
++          <node kind="schema" qname="@" />
++        </introspection-scope>
++      </schema-mapping>
++    </data-source>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\r\n    <data-source source=\"LOCAL\" name=\"datasource\" uuid=\"43e66c95-f8ba-4300-aac7-b0521f8f3772\">\r\n      <driver-ref>sqlite.xerial</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>\r\n      <jdbc-url>jdbc:sqlite:$USER_HOME$/Downloads/dict_hh.db</jdbc-url>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
++++ .idea/dataSources.xml	(date 1601652158618)
+@@ -7,5 +7,16 @@
+       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+       <jdbc-url>jdbc:sqlite:$USER_HOME$/Downloads/dict_hh.db</jdbc-url>
+     </data-source>
++    <data-source source="LOCAL" name="dict_hh" uuid="47e91fdf-edee-4fbe-aa63-b543997a0427">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:D:\Dictionary\src\dict_hh.db</jdbc-url>
++      <libraries>
++        <library>
++          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
++        </library>
++      </libraries>
++    </data-source>
+   </component>
+ </project>
+\ No newline at end of file

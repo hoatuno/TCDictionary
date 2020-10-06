@@ -70,8 +70,7 @@
                <Font name="Arial Bold" size="25.0" />
             </font>
          </Text>
-         <Button layoutX="311.0" layoutY="39.0" mnemonicParsing="false" styleClass="Button"  text="Button" />
-         <WebView fx:id="webview" fontSmoothingType="GRAY" layoutX="261.0" layoutY="184.0" prefHeight="363.0" prefWidth="380.0" stylesheets="@dictionaryStyle.css" />
+         <WebView fx:id="webview" fontSmoothingType="GRAY" layoutX="261.0" layoutY="184.0" prefHeight="363.0" prefWidth="379.0" />
 
       </children>
    </Group>
