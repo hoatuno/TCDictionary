@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 import edu.princeton.cs.algs4.*;
 
+
 public class Dictionary {
     Scanner scanner = new Scanner(System.in);
     public List<Word> wordList = new ArrayList<>();
@@ -63,8 +64,7 @@ public class Dictionary {
         try {
             File file = new File(filepath);
             FileWriter fileWriter = new FileWriter(file);
-            for (int i = 0, wordListSize = wordList.size(); i < wordListSize; i++) {
-                Word value = wordList.get(i);
+            for (Word value : wordList) {
                 String word = value.getWord();
                 String def = value.getDef();
                 String tab = "\t";
@@ -135,13 +135,26 @@ public class Dictionary {
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
 
+<<<<<<< HEAD:src/core/Dictionary.java
 
         dict.insertFromFile("F:\\OOP\\project\\src\\data.txt");
+=======
+        dict.getAll("D:\\New folder\\src\\dat.txt");
+        //dict.insertFromFile("D:\\New folder\\src\\data.txt");
+>>>>>>> 4178cc942c48f23405b934753cb6be3e8131b542:src/Dictionary.java
         //dict.DictionarySearcher();
-        //System.out.println(dict.wordList.size());
-        dict.showAllWords();
+        System.out.println(dict.wordList.size());
+        //dict.showAllWords();
         //dict.DictionaryLookUp();
+<<<<<<< HEAD:src/core/Dictionary.java
         dict.exportToFile("F:\\OOP\\project\\src\\out-data.txt");
+=======
+        //dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+    }
+
+    public void getAll(String filepath) {
+        
+>>>>>>> 4178cc942c48f23405b934753cb6be3e8131b542:src/Dictionary.java
     }
 
     //public void dictionaryBasic() {
