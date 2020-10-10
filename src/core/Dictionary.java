@@ -5,11 +5,15 @@ import java.util.*;
 import java.sql.*;
 
 
+
 public class Dictionary {
     Scanner scanner = new Scanner(System.in);
     public List<Word> wordList = new ArrayList<>();
     public List<String> words = new ArrayList<>();
-
+    //OkHttpClient DictClient = new OkHttpClient();
+    String microsoftBingAPIKey = "c1fd29d6985e4d6c942f80a054cf6928";
+    String translatorURL = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=vi";
+    // add words to database wordList, one by one.
     public void insertFromCommandLine() {
 
         int numofWords = scanner.nextInt();
@@ -22,7 +26,7 @@ public class Dictionary {
             numofWords--;
         }
     }
-
+    // show all words in database of wordList.
     public void showAllWords() {
         for (int i = 0; i < wordList.size(); i++) {
             String wd = wordList.get(i).getWord();
@@ -30,7 +34,6 @@ public class Dictionary {
             System.out.println(i + 1 + "      | " + wd + "            | " + def);
         }
     }
-
 
     // read in data from .txt file, tab delimiter.
 
@@ -59,7 +62,7 @@ public class Dictionary {
             }
         }
     }
-
+    // Export word to a specified file, text file recommended.
     public void exportToFile(String filepath) {
         int l = wordList.size();
         try {
@@ -80,7 +83,7 @@ public class Dictionary {
             e.printStackTrace();
         }
     }
-
+    // search for word's relatives.
     public void DictionarySearcher() {
         Scanner scanner = new Scanner(System.in);
         String lookfor = scanner.nextLine();
@@ -104,7 +107,7 @@ public class Dictionary {
 
         }
     }
-
+    // print to the console word's def, if found.
     public void DictionaryLookUp() {
 
         String word = scanner.nextLine();
@@ -119,6 +122,7 @@ public class Dictionary {
             }
         }
     }
+    // Search for specific word in wordList
     public  String searchWord(String word) {
         int size = wordList.size();
         String[] listofword = new String[wordList.size()];
@@ -132,6 +136,8 @@ public class Dictionary {
         }
         return "404 not found";
     }
+
+    // import SQLite database
     public void insertFromSQLiteDatabase() {
         String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
         String sql = "SELECT word FROM av";
@@ -148,7 +154,7 @@ public class Dictionary {
             throwables.printStackTrace();
         }
     }
-
+    // get HTML representation based on word @toFind
     public String queryforHtml(String toFind) {
 
         String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
@@ -169,12 +175,8 @@ public class Dictionary {
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
         dict.insertFromSQLiteDatabase();
-        System.out.println(Collections.binarySearch(dict.words, "'cellist"));
-
-
-
-
-
+        TranslatorAPI translatorAPI = new TranslatorAPI();
+        System.out.println(translatorAPI.TranslationRequest.result("two river"));
     }
 
 
