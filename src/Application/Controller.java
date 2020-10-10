@@ -22,7 +22,7 @@ public class Controller {
 
     public void Submit (ActionEvent event) throws IOException {
         newdick.insertFromFile("F:\\OOP\\project\\src\\core\\data.txt");
-        String answer = newdick.queryforHtml(word.getText());
+        String answer = newdick.webviewdemo(word.getText());
        // myWord.setText(answer);
        // String html = "<h1>adroitness</h1><h3><i>/ə'drɔitnis/</i></h3><h2>danh từ</h2><ul><li>sự khéo léo, sự khéo tay</li></ul>";
         //answer = mano.translate ("en","vi",word.getText());

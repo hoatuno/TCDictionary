@@ -140,6 +140,7 @@ public class Dictionary {
     // import SQLite database
     public void insertFromSQLiteDatabase() {
         String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+        url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
         String sql = "SELECT word FROM av";
         try {
             Connection connection = DriverManager.getConnection(url);
@@ -172,16 +173,30 @@ public class Dictionary {
         }
         return "not found";
     }
+    public String webviewdemo(String toFind) {
+
+        String url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
+        String sql = "SELECT word, html FROM av";
+        int id = Collections.binarySearch(words, toFind);
+        try {
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                if (resultSet.getString("word").equals(toFind)) return resultSet.getString("html");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return "not found";
+    }
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
         dict.insertFromSQLiteDatabase();
         TranslatorAPI translatorAPI = new TranslatorAPI();
-        System.out.println(translatorAPI.TranslationRequest.result("two river"));
+        //System.out.println(translatorAPI.TranslationRequest.result("two river"));
+         System.out.println(dict.queryforHtml("hello"));
     }
-
-
-
-
 
 
 }
