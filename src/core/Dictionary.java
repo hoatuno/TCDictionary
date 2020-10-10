@@ -133,7 +133,7 @@ public class Dictionary {
         return "404 not found";
     }
     public void insertFromSQLiteDatabase() {
-        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+        String url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
         String sql = "SELECT word FROM av";
         try {
             Connection connection = DriverManager.getConnection(url);
@@ -143,23 +143,24 @@ public class Dictionary {
                 words.add(resultSet.getString("word"));
 
             }
-            Collections.sort(words);
+           //Collections.sort(words);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
+    
     public String queryforHtml(String toFind) {
 
-        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
-        String sql = "SELECT id, html FROM av";
+        String url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
+        String sql = "SELECT word, html FROM av";
         int id = Collections.binarySearch(words, toFind);
         try {
             Connection connection = DriverManager.getConnection(url);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-                if (resultSet.getInt("id") == id) return resultSet.getString("html");
+                if (resultSet.getString("word").equals(toFind)) return resultSet.getString("html");
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -169,18 +170,11 @@ public class Dictionary {
     public static void main(String[] args) throws IOException {
         Dictionary dict = new Dictionary();
         dict.insertFromSQLiteDatabase();
-        System.out.println(Collections.binarySearch(dict.words, "'cellist"));
-
-
-
-
+        //System.out.println(Collections.binarySearch(dict.words, "'cellist"));
+        //System.out.println(Collections.binarySearch(dict.words, "what"));
+        System.out.println(dict.queryforHtml("what"));
 
     }
-
-
-
-
-
 
 }
 

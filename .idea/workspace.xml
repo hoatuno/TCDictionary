@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,9 +23,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyleidea-libs/algs4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyleidea-libs/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyleidea-libs/sqlite-jdbc-3.32.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_9_0_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/mano.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/dictionaryStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/dictionaryStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/core/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/dict_hh.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/dictionaryStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/dictionaryStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/dict_hh.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +127,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -115,19 +142,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sqlite-jdbc-3.32.3.2.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jfoenix-9.0.10.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\OOP\project\src\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Dictionary (1)">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -140,6 +167,17 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
@@ -211,17 +249,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -255,9 +282,9 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Dictionary (1)" />
       <item itemvalue="Application.Dictionary" />
       <item itemvalue="Application.test" />
-      <item itemvalue="Application.Dictionary (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -298,6 +325,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -324,43 +352,51 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1601525266411" />
-    <state x="410" y="109" key="FileChooserDialogImpl" timestamp="1602006854539">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="135" y="72" key="DBNavigator.ConnectionInfoDialog" timestamp="1602052259793">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="135" y="72" key="DBNavigator.ConnectionInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1602052259793" />
+    <state x="213" y="24" key="DBNavigator.ProjectSettingsDialog" timestamp="1602051900413">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="213" y="24" key="DBNavigator.ProjectSettingsDialog/0.0.1366.738@0.0.1366.738" timestamp="1602051900413" />
+    <state x="410" y="110" key="FileChooserDialogImpl" timestamp="1602346614851">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="410" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602006854539" />
-    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1601543324368" />
-    <state width="1306" height="179" key="GridCell.Tab.0.bottom" timestamp="1602012291180">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602346614851" />
+    <state width="1323" height="232" key="GridCell.Tab.0.bottom" timestamp="1602347659281">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1306" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
-    <state width="1323" height="130" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state width="1306" height="179" key="GridCell.Tab.0.center" timestamp="1602012291180">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="232" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602347659281" />
+    <state width="1323" height="232" key="GridCell.Tab.0.center" timestamp="1602347659280">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1306" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
-    <state width="1323" height="130" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state width="1306" height="179" key="GridCell.Tab.0.left" timestamp="1602012291180">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="232" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1602347659280" />
+    <state width="1323" height="232" key="GridCell.Tab.0.left" timestamp="1602347659280">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1306" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
-    <state width="1323" height="130" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601654668414" />
-    <state width="1306" height="179" key="GridCell.Tab.0.right" timestamp="1602012291180">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="232" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1602347659280" />
+    <state width="1323" height="232" key="GridCell.Tab.0.right" timestamp="1602347659281">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1306" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
-    <state width="1323" height="130" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1602006857979">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="232" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1602347659281" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1602346630436">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602006857979" />
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601632772273" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1602346630436" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1601527828316">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601527828316" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601648659227">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1602051525628">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601648659227" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1602051525628" />
   </component>
 </project>
