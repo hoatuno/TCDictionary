@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="okhttp">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/okhttp" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/mockwebserver/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okcurl/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-brotli/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-dnsoverhttps/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-hpacktests/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-logging-interceptor/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-sse/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp-tls/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/okhttp/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/crawler/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/guide/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/simple-client/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/slack/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/static-server/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/okhttp/samples/unixdomainsockets/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
