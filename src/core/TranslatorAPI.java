@@ -19,7 +19,7 @@ public class TranslatorAPI {
     OkHttpClient dictClient = new OkHttpClient();
 
     // This function beautify the json response which we get from Translator API endpoint
-    public static String crunchifyPrettyJSONUtility(String json_text) {
+    public String crunchifyPrettyJSONUtility(String json_text) {
 
         // A parser to parse Json into a parse tree of JsonElements
         JsonParser dictParser = new JsonParser();
@@ -37,8 +37,23 @@ public class TranslatorAPI {
         return beautifyResponse;
     }
 
-    public String result(String toFind) throws IOException {
-        return TranslationRequest.makePOSTcalls(toFind);
+    public void result(String toFind) throws IOException {
+        String preprocessedString = TranslationRequest.makePOSTcalls(toFind);
+        String detectedlanguage = preprocessedString.substring(34, 36);
+        int notationleft = 14;
+        String meaning = "";
+        char[] chararr = preprocessedString.toCharArray();
+        for (int i = 0; i < chararr.length; i++) {
+            if (chararr[i] == '"') notationleft--;
+
+            if (notationleft == 1) {
+                meaning += chararr[i];
+            }
+            if (notationleft == 0) break;
+        }
+        meaning += '"';
+        System.out.println(detectedlanguage);
+        System.out.println(meaning);
     }
 
     // This function performs a simple POST call to Microsoft Translator Text Endpoint.
