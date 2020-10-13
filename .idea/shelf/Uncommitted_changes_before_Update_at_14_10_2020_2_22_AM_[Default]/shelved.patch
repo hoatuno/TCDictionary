@@ -1,0 +1,773 @@
+Index: src/core/Dictionary.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/core/Dictionary.java	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ src/core/Dictionary.java	(date 1602616716560)
+@@ -9,10 +9,10 @@
+ public class Dictionary {
+     Scanner scanner = new Scanner(System.in);
+     public List<Word> wordList = new ArrayList<>();
+-    public List<String> words = new ArrayList<>();
++
+     //OkHttpClient DictClient = new OkHttpClient();
+-    String microsoftBingAPIKey = "c1fd29d6985e4d6c942f80a054cf6928";
+-    String translatorURL = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=vi";
++//    String microsoftBingAPIKey = "c1fd29d6985e4d6c942f80a054cf6928";
++//    String translatorURL = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=vi";
+     // add words to database wordList, one by one.
+     public void insertFromCommandLine() {
+ 
+@@ -137,66 +137,20 @@
+         return "404 not found";
+     }
+ 
+-    // import SQLite database
+-    public void insertFromSQLiteDatabase() {
+-        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+-        url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
+-        String sql = "SELECT word FROM av";
+-        try {
+-            Connection connection = DriverManager.getConnection(url);
+-            Statement statement = connection.createStatement();
+-            ResultSet resultSet = statement.executeQuery(sql);
+-            while (resultSet.next()) {
+-                words.add(resultSet.getString("word"));
+-
+-            }
+-            Collections.sort(words);
+-        } catch (SQLException throwables) {
+-            throwables.printStackTrace();
+-        }
+-    }
+-    // get HTML representation based on word @toFind
+-    public String queryforHtml(String toFind) {
+ 
+-        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
+-        String sql = "SELECT id, html FROM av";
+-        int id = Collections.binarySearch(words, toFind);
+-        try {
+-            Connection connection = DriverManager.getConnection(url);
+-            Statement statement = connection.createStatement();
+-            ResultSet resultSet = statement.executeQuery(sql);
+-            while (resultSet.next()) {
+-                if (resultSet.getInt("id") == id) return resultSet.getString("html");
+-            }
+-        } catch (SQLException throwables) {
+-            throwables.printStackTrace();
+-        }
+-        return "not found";
+-    }
+-    public String webviewdemo(String toFind) {
+-
+-        String url = "jdbc:sqlite:F:/OOP/project/src/dict_hh.db";
+-        String sql = "SELECT word, html FROM av";
+-        int id = Collections.binarySearch(words, toFind);
+-        try {
+-            Connection connection = DriverManager.getConnection(url);
+-            Statement statement = connection.createStatement();
+-            ResultSet resultSet = statement.executeQuery(sql);
+-            while (resultSet.next()) {
+-                if (resultSet.getString("word").equals(toFind)) return resultSet.getString("html");
+-            }
+-        } catch (SQLException throwables) {
+-            throwables.printStackTrace();
+-        }
+-        return "not found";
+-    }
+-    public static void main(String[] args) throws IOException {
++    public static void main(String[] args) throws IOException, SQLException {
+         Dictionary dict = new Dictionary();
+-        dict.insertFromSQLiteDatabase();
++        SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
++        actions.insertFromSQLiteDatabase();
++        //System.out.println(actions.queryforHtml("zoom"));
+         TranslatorAPI translatorAPI = new TranslatorAPI();
+-        //System.out.println(translatorAPI.TranslationRequest.result("two river"));
+-         System.out.println(dict.queryforHtml("hello"));
++        translatorAPI.TranslationRequest.result("river");
++
+     }
++
++
++
++
+ 
+ 
+ }
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]/shelved.patch	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]/shelved.patch	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,30 +0,0 @@
+-Index: .idea/dataSources.local.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\">\r\n    <data-source name=\"datasource\" uuid=\"43e66c95-f8ba-4300-aac7-b0521f8f3772\">\r\n      <database-info product=\"SQLite\" version=\"3.31.1\" jdbc-version=\"2.1\" driver-name=\"SQLite JDBC\" driver-version=\"3.31.1\" dbms=\"SQLITE\" exact-version=\"3.31.1\" exact-driver-version=\"3.31\">\r\n        <identifier-quote-string>&quot;</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <auth-provider>no-auth</auth-provider>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/dataSources.local.xml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
+-+++ .idea/dataSources.local.xml	(date 1601995036608)
+-@@ -2,17 +2,8 @@
+- <project version="4">
+-   <component name="dataSourceStorageLocal">
+-     <data-source name="datasource" uuid="43e66c95-f8ba-4300-aac7-b0521f8f3772">
+--      <database-info product="SQLite" version="3.31.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.31.1" dbms="SQLITE" exact-version="3.31.1" exact-driver-version="3.31">
+--        <identifier-quote-string>&quot;</identifier-quote-string>
+--      </database-info>
+--      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+--      <secret-storage>master_key</secret-storage>
+--      <auth-provider>no-auth</auth-provider>
+--      <schema-mapping>
+--        <introspection-scope>
+--          <node kind="schema" qname="@" />
+--        </introspection-scope>
+--      </schema-mapping>
+-+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+-+      <schema-mapping />
+-     </data-source>
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: src/core/mano.java
+===================================================================
+--- src/core/mano.java	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ src/core/mano.java	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,37 +0,0 @@
+-package core;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.net.HttpURLConnection;
+-import java.net.URL;
+-import java.net.URLEncoder;
+-
+-public class mano {
+-
+-    public static void main(String[] args) throws IOException {
+-        String text = "dick";
+-        //Translated text: Hallo Welt!
+-        System.out.println("Translated text: " + translate("en", "vi", text));
+-    }
+-
+-    public static String translate(String langFrom, String langTo, String text) throws IOException {
+-        // INSERT YOU URL HERE
+-        String urlStr = "https://script.google.com/macros/s/AKfycbz_sPWVNw2JmKwaSF2hIfcWDACw4opAecKjrOiAXYO_1_gMQyc/exec" +
+-                "?q=" + URLEncoder.encode(text, "UTF-8") +
+-                "&target=" + langTo +
+-                "&source=" + langFrom;
+-        URL url = new URL(urlStr);
+-        StringBuilder response = new StringBuilder();
+-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+-        String inputLine;
+-        while ((inputLine = in.readLine()) != null) {
+-            response.append(inputLine);
+-        }
+-        in.close();
+-        return response.toString();
+-    }
+-
+-}
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/shelved.patch	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/shelved.patch	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,175 +0,0 @@
+-Index: TCDIctionary.iml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"CheckStyle-IDEA-Module\">\r\n    <option name=\"configuration\">\r\n      <map />\r\n    </option>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- TCDIctionary.iml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
+-+++ TCDIctionary.iml	(date 1601647161513)
+-@@ -12,5 +12,14 @@
+-     </content>
+-     <orderEntry type="inheritedJdk" />
+-     <orderEntry type="sourceFolder" forTests="false" />
+-+    <orderEntry type="module-library">
+-+      <library>
+-+        <CLASSES>
+-+          <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.32.3.2.jar!/" />
+-+        </CLASSES>
+-+        <JAVADOC />
+-+        <SOURCES />
+-+      </library>
+-+    </orderEntry>
+-   </component>
+- </module>
+-\ No newline at end of file
+-Index: .idea/sqldialects.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/sqldialects.xml	(date 1601650511314)
+-+++ .idea/sqldialects.xml	(date 1601650511314)
+-@@ -0,0 +1,7 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="SqlDialectMappings">
+-+    <file url="file://$PROJECT_DIR$/src/Dictionary.java" dialect="GenericSQL" />
+-+    <file url="PROJECT" dialect="SQLite" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: src/Dictionary.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import java.io.*;\r\nimport java.util.*;\r\n\r\n\r\npublic class Dictionary {\r\n    Scanner scanner = new Scanner(System.in);\r\n    public List<Word> wordList = new ArrayList<>();\r\n\r\n    public void insertFromCommandLine() {\r\n\r\n        int numofWords = scanner.nextInt();\r\n        scanner.nextLine();\r\n        while (numofWords > 0) {\r\n            String word = scanner.nextLine();\r\n            String def = scanner.nextLine();\r\n            Word wordObj = new Word(word, def);\r\n            wordList.add(wordObj);\r\n            numofWords--;\r\n        }\r\n    }\r\n\r\n    public void showAllWords() {\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            String wd = wordList.get(i).getWord();\r\n            String def = wordList.get(i).getDef();\r\n            System.out.println(i + 1 + \"      | \" + wd + \"            | \" + def);\r\n        }\r\n    }\r\n\r\n    // read in data from .txt file, tab delimiter.\r\n\r\n    public void insertFromFile(String filename) {\r\n        BufferedReader bufferedReader = null;\r\n        try {\r\n            bufferedReader = new BufferedReader(new FileReader(filename));\r\n            String content = bufferedReader.readLine();\r\n            while (content != null) {\r\n                //System.out.println(content);\r\n                String[] splitcontent = content.split(\"\\\\t\", -1);\r\n                String word = splitcontent[0];\r\n                String def = splitcontent[1];\r\n                Word wordobj = new Word(word, def);\r\n                wordList.add(wordobj);\r\n                content = bufferedReader.readLine();\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        } finally {\r\n            try {\r\n                if (bufferedReader != null)\r\n                    bufferedReader.close();\r\n            } catch (IOException ex) {\r\n                ex.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    public void exportToFile(String filepath) {\r\n        int l = wordList.size();\r\n        try {\r\n            File file = new File(filepath);\r\n            FileWriter fileWriter = new FileWriter(file);\r\n            for (Word value : wordList) {\r\n                String word = value.getWord();\r\n                String def = value.getDef();\r\n                String tab = \"\\t\";\r\n                String ln = \"\\n\";\r\n                fileWriter.write(word);\r\n                fileWriter.write(tab);\r\n                fileWriter.write(def);\r\n                fileWriter.write(ln);\r\n            }\r\n            fileWriter.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void DictionarySearcher() {\r\n        Scanner scanner = new Scanner(System.in);\r\n        String lookfor = scanner.nextLine();\r\n        int l = lookfor.length();\r\n        String[] listofword = new String[wordList.size()];\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            listofword[i] = wordList.get(i).getWord();\r\n        }\r\n        // if every lookfor's char == first lookfor.length characters of a word, print out the word.\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            // ignore word with less characters than that of the string requested.\r\n            if (listofword[i].length() >= l) {\r\n                int cnt = 0;\r\n                for (int j = 0; j < l; j++) {\r\n                    if (listofword[i].charAt(j) == lookfor.charAt(j)) {\r\n                        cnt++;\r\n                    }\r\n                }\r\n                if (cnt == l) System.out.println(listofword[i]);\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    public void DictionaryLookUp() {\r\n\r\n        String word = scanner.nextLine();\r\n        int size = wordList.size();\r\n        String[] listofword = new String[wordList.size()];\r\n        for (int i = 0; i < wordList.size(); i++) {\r\n            listofword[i] = wordList.get(i).getWord();\r\n        }\r\n        for(int i=0; i<size; i++) {\r\n            if (listofword[i].equals(word)) {\r\n                System.out.println(wordList.get(i).getDef());\r\n            }\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) throws IOException {\r\n        Dictionary dict = new Dictionary();\r\n\r\n        dict.getAll(\"D:\\\\New folder\\\\src\\\\dat.txt\");\r\n        //dict.insertFromFile(\"D:\\\\New folder\\\\src\\\\data.txt\");\r\n        //dict.DictionarySearcher();\r\n        System.out.println(dict.wordList.size());\r\n        //dict.showAllWords();\r\n        //dict.DictionaryLookUp();\r\n        //dict.exportToFile(\"D:\\\\New folder\\\\src\\\\out-data.txt\");\r\n    }\r\n\r\n    public void getAll(String filepath) {\r\n        \r\n    }\r\n\r\n    //public void dictionaryBasic() {\r\n\r\n\r\n    //}\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- src/Dictionary.java	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
+-+++ src/Dictionary.java	(date 1601994821312)
+-@@ -1,6 +1,8 @@
+-+
+-+
+- import java.io.*;
+- import java.util.*;
+--
+-+import java.sql.*;
+- 
+- public class Dictionary {
+-     Scanner scanner = new Scanner(System.in);
+-@@ -108,34 +110,43 @@
+-         for (int i = 0; i < wordList.size(); i++) {
+-             listofword[i] = wordList.get(i).getWord();
+-         }
+--        for(int i=0; i<size; i++) {
+-+        for (int i = 0; i < size; i++) {
+-             if (listofword[i].equals(word)) {
+-                 System.out.println(wordList.get(i).getDef());
+-             }
+-         }
+-     }
+- 
+--    public static void main(String[] args) throws IOException {
+-+    public static void main(String[] args) throws IOException, SQLException {
+-         Dictionary dict = new Dictionary();
+--
+--        dict.getAll("D:\\New folder\\src\\dat.txt");
+--        //dict.insertFromFile("D:\\New folder\\src\\data.txt");
+--        //dict.DictionarySearcher();
+--        System.out.println(dict.wordList.size());
+--        //dict.showAllWords();
+--        //dict.DictionaryLookUp();
+--        //dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+-+        System.out.print(dict.queryforHtml("zoom"));
+-+//        dict.getAll();
+-+//        dict.insertFromFile("D:\\New folder\\src\\data.txt");
+-+//        dict.DictionarySearcher();
+-+//        System.out.println(dict.wordList.size());
+-+//        dict.showAllWords();
+-+//        dict.DictionaryLookUp();
+-+//        dict.exportToFile("D:\\New folder\\src\\out-data.txt");
+-     }
+- 
+--    public void getAll(String filepath) {
+--        
+-+    // get HTML representation of the word
+-+    public String queryforHtml(String wordtoFind) throws SQLException{
+-+        String sql = "SELECT id, word, html FROM av";
+-+        String url = "jdbc:sqlite:D:\\Dictionary\\src\\dict_hh.db";
+-+        Connection connection = DriverManager.getConnection(url);
+-+        Statement statement = connection.createStatement();
+-+        ResultSet resultSet = statement.executeQuery(sql);
+-+        while (resultSet.next()) {
+-+            if (resultSet.getString("word").equals(wordtoFind)) {
+-+                return resultSet.getString("html");
+-+                //resultSet.getInt("id");
+-+            }
+-+        }
+-+        return "";
+-     }
+--
+--    //public void dictionaryBasic() {
+-+}
+- 
+- 
+--    //}
+--}
+- 
+- 
+- 
+-Index: .idea/dataSources.local.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\">\r\n    <data-source name=\"datasource\" uuid=\"43e66c95-f8ba-4300-aac7-b0521f8f3772\">\r\n      <database-info product=\"SQLite\" version=\"3.31.1\" jdbc-version=\"2.1\" driver-name=\"SQLite JDBC\" driver-version=\"3.31.1\" dbms=\"SQLITE\" exact-version=\"3.31.1\" exact-driver-version=\"3.31\">\r\n        <identifier-quote-string>&quot;</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <auth-provider>no-auth</auth-provider>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/dataSources.local.xml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
+-+++ .idea/dataSources.local.xml	(date 1601652158712)
+-@@ -14,5 +14,17 @@
+-         </introspection-scope>
+-       </schema-mapping>
+-     </data-source>
+-+    <data-source name="dict_hh" uuid="47e91fdf-edee-4fbe-aa63-b543997a0427">
+-+      <database-info product="SQLite" version="3.31.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.31.1" dbms="SQLITE" exact-version="3.31.1" exact-driver-version="3.31">
+-+        <identifier-quote-string>&quot;</identifier-quote-string>
+-+      </database-info>
+-+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+-+      <auth-provider>no-auth</auth-provider>
+-+      <schema-mapping>
+-+        <introspection-scope>
+-+          <node kind="schema" qname="@" />
+-+        </introspection-scope>
+-+      </schema-mapping>
+-+    </data-source>
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: .idea/dataSources.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\r\n    <data-source source=\"LOCAL\" name=\"datasource\" uuid=\"43e66c95-f8ba-4300-aac7-b0521f8f3772\">\r\n      <driver-ref>sqlite.xerial</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>\r\n      <jdbc-url>jdbc:sqlite:$USER_HOME$/Downloads/dict_hh.db</jdbc-url>\r\n    </data-source>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/dataSources.xml	(revision 4178cc942c48f23405b934753cb6be3e8131b542)
+-+++ .idea/dataSources.xml	(date 1601652158618)
+-@@ -7,5 +7,16 @@
+-       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+-       <jdbc-url>jdbc:sqlite:$USER_HOME$/Downloads/dict_hh.db</jdbc-url>
+-     </data-source>
+-+    <data-source source="LOCAL" name="dict_hh" uuid="47e91fdf-edee-4fbe-aa63-b543997a0427">
+-+      <driver-ref>sqlite.xerial</driver-ref>
+-+      <synchronize>true</synchronize>
+-+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+-+      <jdbc-url>jdbc:sqlite:D:\Dictionary\src\dict_hh.db</jdbc-url>
+-+      <libraries>
+-+        <library>
+-+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
+-+        </library>
+-+      </libraries>
+-+    </data-source>
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,9 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]" date="1601995003491" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 10/6/2020 9:36 PM [Default Changelist]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="out/production/TCDIctionary/Dictionary.class" />
+-    <option name="AFTER_PATH" value="out/production/TCDIctionary/Dictionary.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/Dictionary.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: src/core/data.txt
+===================================================================
+--- src/core/data.txt	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ src/core/data.txt	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,6 +0,0 @@
+-hello	xinchao
+-fuck	duma
+-leg	    chan
+-coffee	caphe
+-bottle	chai
+-corona	loz
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]" date="1602002947599" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 10/6/2020 11:48 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
+@@ -1,9 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]" date="1601994909850" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 10/6/2020 9:34 PM [Default Changelist]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="out/production/TCDIctionary/Dictionary.class" />
+-    <option name="AFTER_PATH" value="out/production/TCDIctionary/Dictionary.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/Dictionary.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/workspace.xml	(date 1602616799735)
+@@ -1,8 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="BranchesTreeState">
+     <expand>
+       <path>
+@@ -23,15 +20,23 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_32_3_2.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/Dictionary.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/Dictionary.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/jfoenix-8.0.10.jar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/project/Application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/Main.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/project/core/TranslatorAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/TranslatorAPI.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/project/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/dict_hh.db" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/core/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Dictionary.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/core/TranslatorAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/TranslatorAPI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/core/data.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/core/mano.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -95,6 +100,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GitToolBoxStore">
+     <option name="projectConfigVersion" value="2" />
+@@ -113,6 +119,7 @@
+     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+     <property name="DatabaseDriversLRU" value="sqlite" />
+     <property name="DefaultHtmlFileTemplate" value="HTML File" />
++    <property name="Downloaded.Files.Path.Enabled" value="true" />
+     <property name="GoToClass.includeLibraries" value="false" />
+     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+     <property name="GoToFile.includeJavaFiles" value="false" />
+@@ -120,24 +127,27 @@
+     <property name="MemberChooser.showClasses" value="true" />
+     <property name="MemberChooser.sorted" value="false" />
+     <property name="OverrideImplement.combined" value="false" />
++    <property name="Repository.Attach.Annotations" value="false" />
++    <property name="Repository.Attach.JavaDocs" value="false" />
++    <property name="Repository.Attach.Sources" value="false" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+     <property name="dynamic.classpath" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sqlite-jdbc-3.32.3.2.jar" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/okhttp" />
+     <property name="project.structure.last.edited" value="Libraries" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.2" />
+     <property name="recentsLimit" value="5" />
+-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
++    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="F:\OOP\project\src\core" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Main">
++  <component name="RunManager" selected="Application.Dictionary (1)">
+     <configuration default="true" type="Applet" factoryName="Applet">
+       <module name="" />
+       <option name="MAIN_CLASS_NAME" />
+@@ -151,17 +161,6 @@
+       <option name="ALTERNATIVE_JRE_PATH" />
+       <method />
+     </configuration>
+-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+-      <option name="arquillianRunConfiguration">
+-        <value>
+-          <option name="containerStateName" value="" />
+-        </value>
+-      </option>
+-      <option name="TEST_OBJECT" value="class" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+       <option name="VMOptions" />
+       <option name="arguments" />
+@@ -212,6 +211,20 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="TranslatorAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="core.TranslatorAPI" />
++      <module name="project" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="core.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration default="true" type="Application" factoryName="Application">
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+       <method v="2">
+@@ -265,13 +278,15 @@
+     </configuration>
+     <list>
+       <item itemvalue="Application.Main" />
+-      <item itemvalue="Application.Dictionary (1)" />
+       <item itemvalue="Application.Dictionary" />
+       <item itemvalue="Application.test" />
++      <item itemvalue="Application.Dictionary (1)" />
++      <item itemvalue="Application.TranslatorAPI" />
+     </list>
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.Dictionary (1)" />
++        <item itemvalue="Application.TranslatorAPI" />
+         <item itemvalue="Application.test" />
+         <item itemvalue="Application.Dictionary" />
+       </list>
+@@ -331,87 +346,63 @@
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+     <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1601650842100" />
++    <state x="466" y="275" width="433" height="214" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602339978007">
++      <screen x="0" y="0" width="1366" height="728" />
++    </state>
++    <state x="466" y="275" width="433" height="214" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1602339978007" />
+     <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1601525266411">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+     <state x="303" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1601525266411" />
+-    <state x="135" y="72" key="DBNavigator.ConnectionInfoDialog" timestamp="1602052259793">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state x="505" y="236" key="DetectedRootsChooserDialog" timestamp="1602341957121">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="135" y="72" key="DBNavigator.ConnectionInfoDialog/0.0.1366.738@0.0.1366.738" timestamp="1602052259793" />
+-    <state x="213" y="24" key="DBNavigator.ProjectSettingsDialog" timestamp="1602051900413">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state x="505" y="236" key="DetectedRootsChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1602341957121" />
++    <state x="410" y="109" key="FileChooserDialogImpl" timestamp="1602341944746">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="213" y="24" key="DBNavigator.ProjectSettingsDialog/0.0.1366.738@0.0.1366.738" timestamp="1602051900413" />
+-    <state x="501" y="254" key="DetectedRootsChooserDialog" timestamp="1602349537928">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state x="501" y="254" key="DetectedRootsChooserDialog/0.0.1366.738@0.0.1366.738" timestamp="1602349537928" />
+-    <state x="410" y="110" key="FileChooserDialogImpl" timestamp="1602350020790">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state x="410" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602006854539" />
+-    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602350020790" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.bottom" timestamp="1602350804675">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state width="1306" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602350804675" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.center" timestamp="1602350804675">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state width="1306" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1602350804675" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.left" timestamp="1602350804675">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state width="1306" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1602350804675" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.right" timestamp="1602350804675">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state width="1306" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602012291180" />
+-    <state width="1323" height="102" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1602350804675" />
+-    <state width="1323" height="208" key="GridCell.Tab.1.bottom" timestamp="1602350450308">
+-      <screen x="0" y="0" width="1366" height="738" />
+-    </state>
+-    <state width="1323" height="208" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602350450308" />
+-    <state width="1323" height="208" key="GridCell.Tab.1.center" timestamp="1602350450308">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state x="410" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602341944746" />
++    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1601543324368" />
++    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1602615028171">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1323" height="208" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1602350450308" />
+-    <state width="1323" height="208" key="GridCell.Tab.1.left" timestamp="1602350450308">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
++    <state width="1323" height="130" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
++    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1602615028171">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1323" height="208" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1602350450308" />
+-    <state width="1323" height="208" key="GridCell.Tab.1.right" timestamp="1602350450308">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
++    <state width="1323" height="130" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
++    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1602615028171">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1323" height="208" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1602350450308" />
+-    <state x="129" y="56" key="MergeDialog" timestamp="1602349061576">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
++    <state width="1323" height="130" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1601654668414" />
++    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1602615028171">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="129" y="56" key="MergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1602349061576" />
+-    <state x="321" y="130" key="MultipleFileMergeDialog" timestamp="1602349080695">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
++    <state width="1323" height="130" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1601654668415" />
++    <state x="184" y="0" key="SettingsEditor" timestamp="1602341971856">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="321" y="130" key="MultipleFileMergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1602349080695" />
+-    <state x="184" y="0" key="SettingsEditor" timestamp="1602350027320">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602341971856" />
++    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1601632772273" />
++    <state x="408" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1602339648376">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602006857979" />
+-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1602350027320" />
+-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1602349108430">
+-      <screen x="0" y="0" width="1366" height="738" />
++    <state x="408" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1366.728@0.0.1366.728" timestamp="1602339648376" />
++    <state x="500" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602616134897">
++      <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1602349108430" />
++    <state x="500" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1602616134897" />
+     <state x="339" y="165" key="run.anything.popup" timestamp="1601527828316">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1601527828316" />
+-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1602051525628">
++    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1601648659227">
+       <screen x="0" y="0" width="1366" height="738" />
+     </state>
+-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1602051525628" />
++    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1601648659227" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/dbnavigator.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dbnavigator.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/dbnavigator.xml	(date 1602616799767)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="DBNavigator.Project.DataEditorManager">
+     <record-view-column-sorting-type value="BY_INDEX" />
+-    <value-preview-text-wrapping value="true" />
++    <value-preview-text-wrapping value="false" />
+     <value-preview-pinned value="false" />
+   </component>
+   <component name="DBNavigator.Project.DataExportManager">
+@@ -25,7 +25,7 @@
+     <show-object-properties value="true" />
+     <loaded-nodes>
+       <connection connection-id="355cf0fb-463e-4062-9a74-b18f652cdda7">
+-        <schema name="main" object-types="column, constraint, table, view, index, dataset trigger" />
++        <schema name="main" object-types="constraint, view, column, dataset trigger, index, table" />
+       </connection>
+     </loaded-nodes>
+   </component>
+Index: src/core/TranslatorAPI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/core/TranslatorAPI.java	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ src/core/TranslatorAPI.java	(date 1602616716563)
+@@ -19,7 +19,7 @@
+     OkHttpClient dictClient = new OkHttpClient();
+ 
+     // This function beautify the json response which we get from Translator API endpoint
+-    public static String crunchifyPrettyJSONUtility(String json_text) {
++    public String crunchifyPrettyJSONUtility(String json_text) {
+ 
+         // A parser to parse Json into a parse tree of JsonElements
+         JsonParser dictParser = new JsonParser();
+@@ -37,8 +37,23 @@
+         return beautifyResponse;
+     }
+ 
+-    public String result(String toFind) throws IOException {
+-        return TranslationRequest.makePOSTcalls(toFind);
++    public void result(String toFind) throws IOException {
++        String preprocessedString = TranslationRequest.makePOSTcalls(toFind);
++        String detectedlanguage = preprocessedString.substring(34, 36);
++        int notationleft = 14;
++        String meaning = "";
++        char[] chararr = preprocessedString.toCharArray();
++        for (int i = 0; i < chararr.length; i++) {
++            if (chararr[i] == '"') notationleft--;
++
++            if (notationleft == 1) {
++                meaning += chararr[i];
++            }
++            if (notationleft == 0) break;
++        }
++        meaning += '"';
++        System.out.println(detectedlanguage);
++        System.out.println(meaning);
+     }
+ 
+     // This function performs a simple POST call to Microsoft Translator Text Endpoint.
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/vcs.xml	(date 1602616715489)
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/lib/okhttp" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/shelved.patch .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM_[Default_Changelist]/shelved.patch
+deleted file mode 100644
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_11_57_PM__Default_.xml .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_11_57_PM__Default_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_12_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_12_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2020_1_10_PM__Default_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2020_1_10_PM__Default_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_11_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_11_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml

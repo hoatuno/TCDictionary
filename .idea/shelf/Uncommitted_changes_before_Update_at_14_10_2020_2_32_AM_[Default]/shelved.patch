@@ -1,0 +1,33 @@
+Index: .idea/dbnavigator.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dbnavigator.xml	(revision 23ee4e029e7a91e36dfec2e6899d8534bcb3c29f)
++++ .idea/dbnavigator.xml	(date 1602617496506)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="DBNavigator.Project.DataEditorManager">
+     <record-view-column-sorting-type value="BY_INDEX" />
+-    <value-preview-text-wrapping value="true" />
++    <value-preview-text-wrapping value="false" />
+     <value-preview-pinned value="false" />
+   </component>
+   <component name="DBNavigator.Project.DataExportManager">
+@@ -25,7 +25,7 @@
+     <show-object-properties value="true" />
+     <loaded-nodes>
+       <connection connection-id="355cf0fb-463e-4062-9a74-b18f652cdda7">
+-        <schema name="main" object-types="column, constraint, table, view, index, dataset trigger" />
++        <schema name="main" object-types="constraint, view, column, dataset trigger, index, table" />
+       </connection>
+     </loaded-nodes>
+   </component>
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_11_57_PM__Default_.xml .idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_11_57_PM__Default_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_36_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_12_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_12_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_11_48_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2020_1_10_PM__Default_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2020_1_10_PM__Default_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Checkout_at_10_6_2020_9_34_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_11_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Update_at_7_10_2020_1_11_PM__Default_Changelist_.xml
+diff --git .idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml .idea/shelf/Uncommitted_changes_before_Merge_at_9_29_2020_11_10_PM__Default_Changelist_.xml
