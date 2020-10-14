@@ -13,6 +13,7 @@ import core.*;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import speech.TextToSpeech;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,6 +29,7 @@ public class Controller {
     private WebView webview = new WebView();
     @FXML
     private Button btnlookup, btntrans, buttonedit;
+    TextToSpeech tts = new TextToSpeech();
 
     public void Submit (ActionEvent event) throws IOException, SQLException {
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
@@ -41,13 +43,18 @@ public class Controller {
         String answer = translatorAPI.result(jfxtect.getText()); // the cai nao tra ve string
         myWord.setText(answer);
     }
-    public void addWord (ActionEvent event) throws IOException {
+    public void addWord (ActionEvent event) throws IOException, SQLException {
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
         actions.insertWord(addword.toString(), defword.toString());
     }
     public void deleteWord (ActionEvent event) throws IOException {
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
         actions.deleteWord(delword.toString());
+    }
+    public void speechWord (ActionEvent event) throws IOException {
+
+        String sptext = word.getText();
+        tts.speak(sptext, 2.0f, false, true);
     }
 
     @FXML

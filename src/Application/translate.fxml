@@ -52,7 +52,7 @@
                 </font>
             </JFXButton>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="306.0" layoutX="342.0" layoutY="140.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="282.0" />
-         <JFXTextArea fx:id="jfxtect" focusColor="WHITE" layoutX="41.0" layoutY="146.0" onDragDetected="#translate" prefHeight="293.0" prefWidth="272.0" unFocusColor="WHITE">
+         <JFXTextArea fx:id="jfxtect" focusColor="WHITE" layoutX="41.0" layoutY="146.0" prefHeight="293.0" prefWidth="272.0" unFocusColor="WHITE">
             <font>
                <Font size="18.0" />
             </font>

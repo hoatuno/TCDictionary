@@ -147,7 +147,8 @@ public class Dictionary {
        // translatorAPI.TranslationRequest.result("river");
 
         //actions.insertWord("chakra", "mana");
-        actions.deleteWord("incinerate");
+        actions.insertWord("naruto", "sasuke");
+        //actions.deleteWord("chakra");
 
     }
 }

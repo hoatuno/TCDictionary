@@ -53,7 +53,7 @@ public class TranslatorAPI {
             if (notationleft == 0) break;
         }
         meaning += '"';
-        res += detectedlanguage + "\n" + meaning;
+        res += detectedlanguage + " " + meaning;
         return res;
 
     }

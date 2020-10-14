@@ -25,6 +25,11 @@
                </LinearGradient>
             </fill>
          </Rectangle>
+         <Text fill="#131b36" layoutX="512.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© Hoatu &amp; Deeteecee">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Text>
          <Text layoutX="483.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TCDictionary">
             <font>
                <Font name="Arial Bold" size="25.0" />
@@ -35,11 +40,6 @@
                <Font name="Calibri Bold" size="15.0" />
             </font>
          </JFXButton>
-         <Text fill="#131b36" layoutX="491.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© Hoatu &amp; Deeteecee">
-            <font>
-               <Font size="14.0" />
-            </font>
-         </Text>
          <JFXButton fx:id="buttonedit" layoutX="203.0" layoutY="36.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="EDIT" textFill="#111111">
             <font>
                <Font name="Calibri Bold" size="15.0" />
@@ -71,7 +71,7 @@
                <DropShadow color="#880da3c5" height="12.1" radius="5.55" width="12.1" />
             </effect>
          </TextField>
-         <TextField fx:id="delword" layoutX="40.0" layoutY="216.0" prefHeight="36.0" prefWidth="317.0" promptText="Type word you want to delete" style="-fx-background-radius: 5;">
+         <TextField fx:id="delword" layoutX="40.0" layoutY="216.0" onAction="#deleteWord" prefHeight="36.0" prefWidth="317.0" promptText="Type word you want to delete" style="-fx-background-radius: 5;">
             <font>
                <Font size="15.0" />
             </font>
