@@ -19,10 +19,10 @@ public class Main extends Application {
 
             primaryStage.setTitle("TCDICTIONARY");
             primaryStage.setScene(searchScene);
-
             primaryStage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+
         }
     }
 

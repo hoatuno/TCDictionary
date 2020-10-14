@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
     <Group>
@@ -51,13 +47,13 @@
                     <Font name="Calibri Bold" size="15.0" />
                 </font>
             </JFXButton>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="306.0" layoutX="342.0" layoutY="140.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="282.0" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="306.0" layoutX="342.0" layoutY="142.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="282.0" />
          <JFXTextArea fx:id="jfxtect" focusColor="WHITE" layoutX="41.0" layoutY="146.0" prefHeight="293.0" prefWidth="272.0" unFocusColor="WHITE">
             <font>
                <Font size="18.0" />
             </font>
          </JFXTextArea>
-         <JFXButton layoutX="284.0" layoutY="97.0" onAction="#translate" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #f50bff; -fx-background-radius: 6;" text="TRANSLATE" textFill="#27016f">
+         <JFXButton layoutX="277.0" layoutY="97.0" onAction="#translate" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #f50bff; -fx-background-radius: 6;" text="TRANSLATE" textFill="#27016f">
             <font>
                <Font name="Calibri Bold" size="15.0" />
             </font>

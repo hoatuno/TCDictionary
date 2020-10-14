@@ -143,12 +143,13 @@ public class Dictionary {
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
         actions.insertFromSQLiteDatabase();
         System.out.println(actions.queryforHtml("zoom"));
-       // TranslatorAPI translatorAPI = new TranslatorAPI();
-       // translatorAPI.TranslationRequest.result("river");
+        TranslatorAPI translatorAPI = new TranslatorAPI();
+
 
         //actions.insertWord("chakra", "mana");
-        actions.insertWord("naruto", "sasuke");
-        //actions.deleteWord("chakra");
+        actions.insertWord("itachi", "sasuke");
+        //actions.deleteWord("aberrance");
+        System.out.println(actions.updateWord("naruto", "narutobacco", "rasengan", "na-ru-tô-ba-cô"));
 
     }
 }

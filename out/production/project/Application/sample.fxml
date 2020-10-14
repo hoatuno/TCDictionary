@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -32,7 +32,7 @@
          </Rectangle>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="399.0" layoutX="267.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="10.0" width="370.0" />
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="396.0" layoutX="32.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="212.0" />
-         <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#Submit" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
+         <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#setListView" onInputMethodTextChanged="#setListView" onKeyPressed="#setListView" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
             <font>
                <Font size="15.0" />
             </font>
@@ -66,13 +66,12 @@
                <Font name="Calibri Bold" size="15.0" />
             </font>
          </JFXButton>
-         <JFXListView layoutX="39.0" layoutY="141.0" />
          <JFXButton ellipsisString="" layoutX="523.0" layoutY="90.0" minWidth="46.0" onAction="#speechWord" prefHeight="36.0" prefWidth="46.0" style="-fx-background-color: none; -fx-background-radius: 10;" textFill="#111111">
             <font>
                <Font name="Calibri Bold" size="11.0" />
             </font>
             <graphic>
-               <ImageView fitHeight="31.0" fitWidth="29.0" onDragDetected="#speechWord" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="31.0" fitWidth="29.0" onDragDetected="#speechWord" pickOnBounds="true" preserveRatio="true" rotate="41.4">
                   <image>
                      <Image url="@loud-speaker.png" />
                   </image>
@@ -103,6 +102,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
+         <ListView fx:id="listview" layoutX="38.0" layoutY="143.0" prefHeight="400.0" prefWidth="205.0" />
 
       </children>
    </Group>

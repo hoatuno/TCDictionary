@@ -23,22 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/server.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/Application/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/Application/editdata.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/editdata.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/Application/translate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/Application/translate.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/Dictionary.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/core/SQLiteDatabaseActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/SQLiteDatabaseActions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/core/TranslatorAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/core/TranslatorAPI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/dict_hh.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/editdata.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/editdata.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/translate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/translate.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Dictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/SQLiteDatabaseActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/SQLiteDatabaseActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/TranslatorAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/TranslatorAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dict_hh.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/dict_hh.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,12 +145,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libraries" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Application/editdata.fxml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -266,6 +275,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -324,11 +344,10 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1602679980846" duration="383000" />
+      <workItem from="1602681334587" duration="14643000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -361,14 +380,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="72" y="205" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1602009123548" />
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602006873956">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602006873956" />
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1601650842100">
+    <state x="-241" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602690970979">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1601650842100" />
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602006873956" />
+    <state x="-241" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1602690970979" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1602697918069">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1602697918069" />
     <state x="466" y="275" width="433" height="214" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602339978007">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -389,40 +409,40 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="505" y="236" key="DetectedRootsChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1602341957121" />
-    <state x="410" y="110" key="FileChooserDialogImpl" timestamp="1602669698675">
+    <state x="410" y="110" key="FileChooserDialogImpl" timestamp="1602694622380">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="410" y="109" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602341944746" />
-    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602669698675" />
-    <state width="1323" height="221" key="GridCell.Tab.0.bottom" timestamp="1602678747036">
+    <state x="410" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602694622380" />
+    <state width="1323" height="190" key="GridCell.Tab.0.bottom" timestamp="1602702779710">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
-    <state width="1323" height="221" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602678747036" />
-    <state width="1323" height="221" key="GridCell.Tab.0.center" timestamp="1602678747036">
+    <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1602702779710" />
+    <state width="1323" height="190" key="GridCell.Tab.0.center" timestamp="1602702779709">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
-    <state width="1323" height="221" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1602678747036" />
-    <state width="1323" height="221" key="GridCell.Tab.0.left" timestamp="1602678747036">
+    <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1602702779709" />
+    <state width="1323" height="190" key="GridCell.Tab.0.left" timestamp="1602702779709">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
-    <state width="1323" height="221" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1602678747036" />
-    <state width="1323" height="221" key="GridCell.Tab.0.right" timestamp="1602678747036">
+    <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1602702779709" />
+    <state width="1323" height="190" key="GridCell.Tab.0.right" timestamp="1602702779710">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602615028171" />
-    <state width="1323" height="221" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1602678747036" />
+    <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1602702779710" />
     <state x="321" y="130" key="MultipleFileMergeDialog" timestamp="1602657445606">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="321" y="130" key="MultipleFileMergeDialog/0.0.1366.738@0.0.1366.738" timestamp="1602657445606" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1602669731062">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1602680408549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602341971856" />
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1602669731062" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1602680408549" />
     <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1602623395978">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
