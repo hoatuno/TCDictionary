@@ -142,10 +142,12 @@ public class Dictionary {
         Dictionary dict = new Dictionary();
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
         actions.insertFromSQLiteDatabase();
-        //System.out.println(actions.queryforHtml("zoom"));
-        TranslatorAPI translatorAPI = new TranslatorAPI();
-        translatorAPI.TranslationRequest.result("river");
-        // den luot t
+        System.out.println(actions.queryforHtml("zoom"));
+       // TranslatorAPI translatorAPI = new TranslatorAPI();
+       // translatorAPI.TranslationRequest.result("river");
+
+        //actions.insertWord("chakra", "mana");
+        actions.deleteWord("incinerate");
 
     }
 }

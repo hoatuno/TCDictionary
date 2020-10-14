@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="355cf0fb-463e-4062-9a74-b18f652cdda7">
-        <schema name="main" object-types="view, column, constraint, table, dataset trigger, index" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="355cf0fb-463e-4062-9a74-b18f652cdda7">
@@ -78,7 +74,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="F:\OOP\project\src\dict_hh.db" schema="main" />
+            <file path="F:\pr\TCDictionary\src\dict_hh.db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

@@ -41,7 +41,7 @@
                     <Font size="14.0" />
                 </font>
             </Text>
-            <JFXButton layoutX="201.0" layoutY="36.0" onAction="#Submit" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="EDIT" textFill="#111111">
+            <JFXButton fx:id="buttonedit" layoutX="201.0" layoutY="36.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="77.0" style="-fx-background-color: #d24dff; -fx-background-radius: 5;" text="EDIT" textFill="#111111">
                 <font>
                     <Font name="Calibri Bold" size="15.0" />
                 </font>

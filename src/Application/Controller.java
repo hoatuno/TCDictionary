@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import core.*;
@@ -20,7 +19,7 @@ import java.sql.SQLException;
 
 public class Controller {
     @FXML
-    private TextField word;
+    private TextField word, addword, defword, delword;
     @FXML
     private JFXTextArea jfxtect;
     @FXML
@@ -28,8 +27,7 @@ public class Controller {
     @FXML
     private WebView webview = new WebView();
     @FXML
-    private Button btnlookup,btntrans;
-
+    private Button btnlookup, btntrans, buttonedit;
 
     public void Submit (ActionEvent event) throws IOException, SQLException {
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
@@ -43,6 +41,14 @@ public class Controller {
         String answer = translatorAPI.result(jfxtect.getText()); // the cai nao tra ve string
         myWord.setText(answer);
     }
+    public void addWord (ActionEvent event) throws IOException {
+        SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
+        actions.insertWord(addword.toString(), defword.toString());
+    }
+    public void deleteWord (ActionEvent event) throws IOException {
+        SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
+        actions.deleteWord(delword.toString());
+    }
 
     @FXML
     private void handleButtonAction (ActionEvent event) throws Exception {
@@ -53,9 +59,13 @@ public class Controller {
             stage = (Stage) btnlookup.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         }
-        else{
+        else  if(event.getSource()==btntrans){
             stage = (Stage) btntrans.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("translate.fxml"));
+        }
+        else {
+            stage = (Stage) buttonedit.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("editdata.fxml"));
         }
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SQLiteDatabaseActions {
     public List<String> words = new ArrayList<>();
-
+    int lastid = 0;
     public Connection connector() {
         String url = "jdbc:sqlite:F:/pr/TCDictionary/src/dict_hh.db";
         Connection connection = null;
@@ -26,6 +26,7 @@ public class SQLiteDatabaseActions {
         ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()) {
             words.add(resultSet.getString("word"));
+            lastid++;
         }
         Collections.sort(words);
     }
@@ -39,17 +40,19 @@ public class SQLiteDatabaseActions {
         return "not found";
     }
     public void insertWord(String word, String def) {
-        String sql = "INSERT INTO av(word, description, html) VALUES(?,?,?)";
-
+        String sql = "INSERT INTO av(id, word, description, html, pronounce) VALUES(?,?,?,?,?)";
         try {
             Connection connection = this.connector();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, word);
-            preparedStatement.setString(2, def);
+            preparedStatement.setInt(1, lastid);
+            preparedStatement.setString(2, word);
+            preparedStatement.setString(3, def);
             String htmltext = "<h1>"+ word + "</h1<ul><li>" + def + "</li></ul>";
-            preparedStatement.setString(3, htmltext);
+            preparedStatement.setString(4, htmltext);
+            preparedStatement.setString(5, "???");
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
+
             throwables.printStackTrace();
         }
     }
@@ -58,7 +61,8 @@ public class SQLiteDatabaseActions {
         try {
             PreparedStatement preparedStatement = this.connector().prepareStatement(sql);
             preparedStatement.setString(1, word);
-            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.executeQuery(sql);
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
