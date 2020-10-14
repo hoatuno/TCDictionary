@@ -32,15 +32,9 @@ public class Controller {
 
 
     public void Submit (ActionEvent event) throws IOException, SQLException {
-        Dictionary newdict = new Dictionary();
         SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
-        newdict.insertFromFile("F:\\OOP\\project\\src\\core\\data.txt"); // tim ho t cai nay
         String answer = actions.queryforHtml(word.getText());
-       // myWord.setText(answer);
-       // String html = "<h1>adroitness</h1><h3><i>/ə'drɔitnis/</i></h3><h2>danh từ</h2><ul><li>sự khéo léo, sự khéo tay</li></ul>";
-        //answer = mano.translate ("en","vi",word.getText());
         final WebEngine engine = webview.getEngine();
-        //engine.setUserStyleSheetLocation(getClass().getClassLoader().getResource("dictionaryStyle.css").toString());
 
         engine.loadContent(answer);
     }
@@ -48,7 +42,6 @@ public class Controller {
         TranslatorAPI translatorAPI = new TranslatorAPI();
         String answer = translatorAPI.result(jfxtect.getText()); // the cai nao tra ve string
         myWord.setText(answer);
-
     }
 
     @FXML
