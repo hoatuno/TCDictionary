@@ -1,1 +1,10 @@
-'.idea' 
+
+/.gradle
+/.idea
+/build
+/gen
+/.project
+/bin
+/lint.xml
+.DS_Store
+*.classcation

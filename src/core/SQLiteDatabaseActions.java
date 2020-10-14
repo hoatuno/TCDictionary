@@ -1,5 +1,7 @@
 package core;
 
+import java.io.File;
+import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,11 +11,7 @@ public class SQLiteDatabaseActions {
     public List<String> words = new ArrayList<>();
 
     public Connection connector() {
-<<<<<<< HEAD
-            String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
-=======
-        String url = "jdbc:sqlite:D:/Dictionary/src/dict_hh.db";
->>>>>>> d7ca74b07159cdf0d02c5053ffa21c74a7ec4553
+        String url = "jdbc:sqlite:F:/pr/TCDictionary/src/dict_hh.db";
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(url);

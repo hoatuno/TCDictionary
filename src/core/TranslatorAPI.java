@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class TranslatorAPI {
     public static final Scanner scanner = new Scanner(System.in);
-    static TranslatorAPI TranslationRequest = new TranslatorAPI();
+    public static TranslatorAPI TranslationRequest = new TranslatorAPI();
     String microsoftBingAPIKey = "c1fd29d6985e4d6c942f80a054cf6928";
     String translatorURL = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=vi";
     // Factory for calls, which can be used to send HTTP requests and read their responses.
@@ -37,11 +37,12 @@ public class TranslatorAPI {
         return beautifyResponse;
     }
 
-    public void result(String toFind) throws IOException {
+    public String result(String toFind) throws IOException {
         String preprocessedString = TranslationRequest.makePOSTcalls(toFind);
         String detectedlanguage = preprocessedString.substring(34, 36);
         int notationleft = 14;
         String meaning = "";
+        String res = "";
         char[] chararr = preprocessedString.toCharArray();
         for (int i = 0; i < chararr.length; i++) {
             if (chararr[i] == '"') notationleft--;
@@ -52,8 +53,9 @@ public class TranslatorAPI {
             if (notationleft == 0) break;
         }
         meaning += '"';
-        System.out.println(detectedlanguage);
-        System.out.println(meaning);
+        res += detectedlanguage + "\n" + meaning;
+        return res;
+
     }
 
     // This function performs a simple POST call to Microsoft Translator Text Endpoint.

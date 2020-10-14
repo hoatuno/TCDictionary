@@ -51,26 +51,26 @@
                     <Font name="Calibri Bold" size="15.0" />
                 </font>
             </JFXButton>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="306.0" layoutX="342.0" layoutY="140.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="282.0" />
-            <JFXTextArea fx:id="jfxtect" focusColor="WHITE" layoutX="41.0" layoutY="146.0" onDragDetected="#translate" prefHeight="293.0" prefWidth="272.0" unFocusColor="WHITE">
-                <font>
-                    <Font size="18.0" />
-                </font>
-            </JFXTextArea>
-            <JFXButton layoutX="284.0" layoutY="97.0" onAction="#translate" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #f50bff; -fx-background-radius: 6;" text="TRANSLATE" textFill="#27016f">
-                <font>
-                    <Font name="Calibri Bold" size="15.0" />
-                </font>
-            </JFXButton>
-            <TextFlow layoutX="347.0" layoutY="146.0" prefHeight="287.0" prefWidth="273.0">
-                <children>
-                    <Text fx:id="myWord" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font size="18.0" />
-                        </font>
-                    </Text>
-                </children>
-            </TextFlow>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="306.0" layoutX="342.0" layoutY="140.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="282.0" />
+         <JFXTextArea fx:id="jfxtect" focusColor="WHITE" layoutX="41.0" layoutY="146.0" onDragDetected="#translate" prefHeight="293.0" prefWidth="272.0" unFocusColor="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </JFXTextArea>
+         <JFXButton layoutX="284.0" layoutY="97.0" onAction="#translate" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #f50bff; -fx-background-radius: 6;" text="TRANSLATE" textFill="#27016f">
+            <font>
+               <Font name="Calibri Bold" size="15.0" />
+            </font>
+         </JFXButton>
+         <TextFlow layoutX="347.0" layoutY="146.0" prefHeight="287.0" prefWidth="273.0">
+            <children>
+               <Text fx:id="myWord" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Text>
+            </children>
+         </TextFlow>
 
         </children>
     </Group>
