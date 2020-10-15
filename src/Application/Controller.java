@@ -1,25 +1,31 @@
 package Application;
 
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextArea;
 import groovy.json.internal.IO;
+import javafx.beans.Observable;
+import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import core.*;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import opennlp.model.Event;
 import speech.TextToSpeech;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class Controller {
@@ -36,16 +42,16 @@ public class Controller {
     @FXML
     private Button btnlookup, btntrans, buttonedit;
 
-    ObservableList<String> seasonList = FXCollections.<String>observableArrayList("Spring", "Summer", "Fall", "Winter");
+    ObservableList<String> seasonList = FXCollections.observableArrayList();
     @FXML
-    private ListView<String> listview = new ListView<>(seasonList);
+    private ListView listview ;
 
 
     TextToSpeech tts = new TextToSpeech();
     SQLiteDatabaseActions actions = new SQLiteDatabaseActions();
 
-    public void Submit(ActionEvent event) throws IOException, SQLException {
 
+    public void Submit(ActionEvent event) throws IOException, SQLException {
         String answer = actions.queryforHtml(word.getText());
         final WebEngine engine = webview.getEngine();
         engine.loadContent(answer);
@@ -75,13 +81,42 @@ public class Controller {
         tts.speak(sptext, 2.0f, false, true);
     }
 
-    public void setListView() throws IOException, SQLException {
+    public ListView getListview() {
+        return listview;
+    }
+    @FXML
+    public void updateListView(KeyEvent event) throws  IOException, SQLException{
+
         String www = word.getText();
-        ObservableList<String> List = FXCollections.observableList(actions.realtimeSearch(www));
-        listview = new ListView<>(List);
-        System.out.println(actions.realtimeSearch(www).toString());
+        ObservableList<String> observableList = FXCollections.observableArrayList(actions.realtimeSearch(www));
+        listview.setItems(observableList);
+
 
     }
+    @FXML public void mouseclick (javafx.scene.input.MouseEvent event) throws IOException,SQLException {
+        String anan = event.getSource().toString();
+        ListView<String> alist =  (ListView<String>)event.getSource();
+        alist.getItems();
+        String ans = event.getTarget().toString();
+        String res = "'";
+        String finale = "";
+        char x = res.charAt(0);
+        int chk = 2;
+        for( char i : ans.toCharArray()){
+            if (i == x || i == '"') {
+                chk --;
+                continue;
+            }
+            if (chk == 0) break;
+            if (chk == 1) finale += i;
+
+        }
+        final WebEngine engine = webview.getEngine();
+        System.out.println(event.getTarget());
+        word.setText(finale);
+        engine.loadContent(actions.queryforHtml(finale));
+    }
+
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {

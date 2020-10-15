@@ -32,7 +32,7 @@
          </Rectangle>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="399.0" layoutX="267.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="10.0" width="370.0" />
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="396.0" layoutX="32.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="212.0" />
-         <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#setListView" onInputMethodTextChanged="#setListView" onKeyPressed="#setListView" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
+         <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#Submit" onKeyTyped="#updateListView" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
             <font>
                <Font size="15.0" />
             </font>
@@ -102,7 +102,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
-         <ListView fx:id="listview" layoutX="38.0" layoutY="143.0" prefHeight="400.0" prefWidth="205.0" />
+         <ListView fx:id="listview" layoutX="38.0" layoutY="143.0" onEditCommit="#Submit" onMouseClicked="#mouseclick" onMousePressed="#mouseclick" prefHeight="400.0" prefWidth="203.0" />
 
       </children>
    </Group>
