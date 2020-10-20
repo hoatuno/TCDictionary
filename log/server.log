@@ -19044,3 +19044,123 @@
 2020-10-20 23:43:11,291 [JavaFX Application Thread] INFO  marytts.Praat TextGrid generator Starting power-on self test.
 2020-10-20 23:43:11,291 [JavaFX Application Thread] INFO  marytts.Praat TextGrid generator Power-on self test complete.
 2020-10-20 23:43:11,297 [JavaFX Application Thread] INFO  marytts.main Startup complete.
+2020-10-20 23:44:44,971 [JavaFX Application Thread] INFO  marytts.main Mary starting up...
+2020-10-20 23:44:44,991 [JavaFX Application Thread] INFO  marytts.main Specification version 5.2
+2020-10-20 23:44:44,992 [JavaFX Application Thread] INFO  marytts.main Implementation version unknown
+2020-10-20 23:44:44,992 [JavaFX Application Thread] INFO  marytts.main Running on a Java 9.0.4 implementation by Oracle Corporation, on a Windows 10 platform (amd64, 10.0)
+2020-10-20 23:44:45,346 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.JTokeniser'
+2020-10-20 23:44:45,372 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Preprocess'
+2020-10-20 23:44:45,994 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_US.)'
+2020-10-20 23:44:46,000 [JavaFX Application Thread] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_US.txt' for locale 'en_US' does not exist. Ignoring.
+2020-10-20 23:44:46,260 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JPhonemiser(en_GB.)'
+2020-10-20 23:44:46,260 [JavaFX Application Thread] INFO  marytts.JPhonemiser User dictionary '.\user-dictionaries\userdict-en_GB.txt' for locale 'en_GB' does not exist. Ignoring.
+2020-10-20 23:44:46,538 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.Prosody'
+2020-10-20 23:44:46,568 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SimplePhoneme2AP(en_US)'
+2020-10-20 23:44:46,571 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.language.en.PronunciationModel'
+2020-10-20 23:44:46,578 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.OpenNLPPosTagger(en,en.pos)'
+2020-10-20 23:44:46,580 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2020-10-20 23:44:46,584 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2020-10-20 23:44:46,600 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2020-10-20 23:44:46,602 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2020-10-20 23:44:46,604 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2020-10-20 23:44:46,607 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2020-10-20 23:44:46,608 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2020-10-20 23:44:46,609 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2020-10-20 23:44:46,614 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2020-10-20 23:44:46,618 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2020-10-20 23:44:46,618 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2020-10-20 23:44:46,620 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2020-10-20 23:44:46,628 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2020-10-20 23:44:46,630 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2020-10-20 23:44:46,634 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2020-10-20 23:44:46,637 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2020-10-20 23:44:46,641 [JavaFX Application Thread] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2020-10-20 23:44:46,652 [JavaFX Application Thread] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale en).
+2020-10-20 23:44:46,860 [JavaFX Application Thread] INFO  marytts.JTokeniser Starting power-on self test.
+2020-10-20 23:44:46,871 [JavaFX Application Thread] INFO  marytts.JTokeniser Power-on self test complete.
+2020-10-20 23:44:46,872 [JavaFX Application Thread] INFO  marytts.Preprocess Module started (TOKENS->WORDS, locale en).
+2020-10-20 23:44:46,873 [JavaFX Application Thread] INFO  marytts.Preprocess Starting power-on self test.
+2020-10-20 23:44:46,874 [JavaFX Application Thread] INFO  marytts.Preprocess Power-on self test complete.
+2020-10-20 23:44:46,874 [JavaFX Application Thread] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_US).
+2020-10-20 23:44:46,879 [JavaFX Application Thread] INFO  marytts.JPhonemiser Starting power-on self test.
+2020-10-20 23:44:46,880 [JavaFX Application Thread] INFO  marytts.JPhonemiser Power-on self test complete.
+2020-10-20 23:44:46,880 [JavaFX Application Thread] INFO  marytts.JPhonemiser Module started (PARTSOFSPEECH->PHONEMES, locale en_GB).
+2020-10-20 23:44:46,881 [JavaFX Application Thread] INFO  marytts.JPhonemiser Starting power-on self test.
+2020-10-20 23:44:46,883 [JavaFX Application Thread] INFO  marytts.JPhonemiser Power-on self test complete.
+2020-10-20 23:44:46,934 [JavaFX Application Thread] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale en).
+2020-10-20 23:44:46,934 [JavaFX Application Thread] INFO  marytts.Prosody Starting power-on self test.
+2020-10-20 23:44:46,936 [JavaFX Application Thread] INFO  marytts.Prosody Power-on self test complete.
+2020-10-20 23:44:46,938 [JavaFX Application Thread] INFO  marytts.SimplePhoneme2AP Module started (SIMPLEPHONEMES->ACOUSTPARAMS, locale en_US).
+2020-10-20 23:44:46,938 [JavaFX Application Thread] INFO  marytts.SimplePhoneme2AP Starting power-on self test.
+2020-10-20 23:44:46,980 [JavaFX Application Thread] INFO  marytts.SimplePhoneme2AP Power-on self test complete.
+2020-10-20 23:44:46,980 [JavaFX Application Thread] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale en).
+2020-10-20 23:44:46,980 [JavaFX Application Thread] INFO  marytts.PronunciationModel Starting power-on self test.
+2020-10-20 23:44:46,987 [JavaFX Application Thread] INFO  marytts.PronunciationModel Power-on self test complete.
+2020-10-20 23:44:46,987 [JavaFX Application Thread] INFO  marytts.OpenNLPPosTagger Module started (WORDS->PARTSOFSPEECH, locale en).
+2020-10-20 23:44:50,330 [JavaFX Application Thread] INFO  marytts.OpenNLPPosTagger Starting power-on self test.
+2020-10-20 23:44:50,331 [JavaFX Application Thread] INFO  marytts.OpenNLPPosTagger Power-on self test complete.
+2020-10-20 23:44:50,339 [JavaFX Application Thread] INFO  marytts.UnitSelectionSynthesizer started.
+2020-10-20 23:44:50,341 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2020-10-20 23:44:50,342 [JavaFX Application Thread] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2020-10-20 23:44:50,558 [JavaFX Application Thread] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2020-10-20 23:44:50,921 [JavaFX Application Thread] INFO  marytts.HMMData Loading GV Model Set:
+2020-10-20 23:44:51,587 [JavaFX Application Thread] INFO  marytts.Voice Registering voice `cmu-rms-hsmm': male, locale en_US
+2020-10-20 23:44:51,588 [JavaFX Application Thread] INFO  marytts.Voice New default voice for locale en_US: cmu-rms-hsmm (desire 0)
+2020-10-20 23:44:51,614 [JavaFX Application Thread] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2020-10-20 23:44:51,695 [JavaFX Application Thread] INFO  marytts.HMMData Loading GV Model Set:
+2020-10-20 23:44:51,897 [JavaFX Application Thread] INFO  marytts.Voice Registering voice `cmu-slt-hsmm': female, locale en_US
+2020-10-20 23:44:51,908 [JavaFX Application Thread] INFO  marytts.HMMData Loading Tree Set in CARTs:
+2020-10-20 23:44:51,978 [JavaFX Application Thread] INFO  marytts.HMMData Loading GV Model Set:
+2020-10-20 23:44:52,176 [JavaFX Application Thread] INFO  marytts.Voice Registering voice `dfki-poppy-hsmm': female, locale en_GB
+2020-10-20 23:44:52,176 [JavaFX Application Thread] INFO  marytts.Voice New default voice for locale en_GB: dfki-poppy-hsmm (desire 0)
+2020-10-20 23:44:52,176 [JavaFX Application Thread] INFO  marytts.HMMSynthesizer started.
+2020-10-20 23:44:52,176 [JavaFX Application Thread] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2020-10-20 23:44:52,177 [JavaFX Application Thread] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2020-10-20 23:44:52,177 [JavaFX Application Thread] INFO  marytts.HMMSynthesizer Power-on self test complete.
+2020-10-20 23:44:52,178 [JavaFX Application Thread] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2020-10-20 23:44:52,178 [JavaFX Application Thread] INFO  marytts.TextToMaryXML Starting power-on self test.
+2020-10-20 23:44:52,180 [JavaFX Application Thread] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2020-10-20 23:44:52,180 [JavaFX Application Thread] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2020-10-20 23:44:52,181 [JavaFX Application Thread] INFO  marytts.TextToMaryXML Power-on self test complete.
+2020-10-20 23:44:52,976 [JavaFX Application Thread] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2020-10-20 23:44:52,976 [JavaFX Application Thread] INFO  marytts.SableParser Starting power-on self test.
+2020-10-20 23:44:52,977 [JavaFX Application Thread] INFO  marytts.SableParser Power-on self test complete.
+2020-10-20 23:44:53,224 [JavaFX Application Thread] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2020-10-20 23:44:53,224 [JavaFX Application Thread] INFO  marytts.SSMLParser Starting power-on self test.
+2020-10-20 23:44:53,224 [JavaFX Application Thread] INFO  marytts.SSMLParser Power-on self test complete.
+2020-10-20 23:44:53,446 [JavaFX Application Thread] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2020-10-20 23:44:53,446 [JavaFX Application Thread] INFO  marytts.APMLParser Starting power-on self test.
+2020-10-20 23:44:53,447 [JavaFX Application Thread] INFO  marytts.APMLParser Power-on self test complete.
+2020-10-20 23:44:53,579 [JavaFX Application Thread] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2020-10-20 23:44:53,579 [JavaFX Application Thread] INFO  marytts.EmotionmlParser Starting power-on self test.
+2020-10-20 23:44:53,579 [JavaFX Application Thread] INFO  marytts.EmotionmlParser Power-on self test complete.
+2020-10-20 23:44:53,579 [JavaFX Application Thread] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2020-10-20 23:44:53,640 [JavaFX Application Thread] INFO  marytts.JTokeniser Starting power-on self test.
+2020-10-20 23:44:53,640 [JavaFX Application Thread] INFO  marytts.JTokeniser Power-on self test complete.
+2020-10-20 23:44:53,648 [JavaFX Application Thread] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2020-10-20 23:44:53,649 [JavaFX Application Thread] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2020-10-20 23:44:53,649 [JavaFX Application Thread] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2020-10-20 23:44:53,659 [JavaFX Application Thread] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2020-10-20 23:44:53,660 [JavaFX Application Thread] INFO  marytts.Prosody Starting power-on self test.
+2020-10-20 23:44:53,660 [JavaFX Application Thread] INFO  marytts.Prosody Power-on self test complete.
+2020-10-20 23:44:53,660 [JavaFX Application Thread] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2020-10-20 23:44:53,660 [JavaFX Application Thread] INFO  marytts.PronunciationModel Starting power-on self test.
+2020-10-20 23:44:53,661 [JavaFX Application Thread] INFO  marytts.PronunciationModel Power-on self test complete.
+2020-10-20 23:44:53,661 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2020-10-20 23:44:53,661 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2020-10-20 23:44:53,661 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2020-10-20 23:44:53,662 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2020-10-20 23:44:53,663 [JavaFX Application Thread] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2020-10-20 23:44:53,663 [JavaFX Application Thread] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2020-10-20 23:44:53,663 [JavaFX Application Thread] INFO  marytts.AcousticModeller Starting power-on self test.
+2020-10-20 23:44:53,666 [JavaFX Application Thread] INFO  marytts.AcousticModeller Power-on self test complete.
+2020-10-20 23:44:53,666 [JavaFX Application Thread] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2020-10-20 23:44:53,666 [JavaFX Application Thread] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2020-10-20 23:44:53,667 [JavaFX Application Thread] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2020-10-20 23:44:53,668 [JavaFX Application Thread] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2020-10-20 23:44:53,668 [JavaFX Application Thread] INFO  marytts.Realised durations extractor Starting power-on self test.
+2020-10-20 23:44:53,668 [JavaFX Application Thread] INFO  marytts.Realised durations extractor Power-on self test complete.
+2020-10-20 23:44:53,670 [JavaFX Application Thread] INFO  marytts.Praat TextGrid generator Module started (REALISED_ACOUSTPARAMS->PRAAT_TEXTGRID, locale null).
+2020-10-20 23:44:53,670 [JavaFX Application Thread] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2020-10-20 23:44:53,670 [JavaFX Application Thread] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2020-10-20 23:44:53,672 [JavaFX Application Thread] INFO  marytts.main Startup complete.
