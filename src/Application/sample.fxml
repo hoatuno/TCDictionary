@@ -31,7 +31,6 @@
             </fill>
          </Rectangle>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="399.0" layoutX="267.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="10.0" width="370.0" />
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="396.0" layoutX="32.0" layoutY="143.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeWidth="12.0" width="212.0" />
          <TextField fx:id="word" layoutX="25.0" layoutY="86.0" onAction="#Submit" onKeyTyped="#updateListView" prefHeight="36.0" prefWidth="457.0" promptText="  Type your word" style="-fx-background-radius: 20;">
             <font>
                <Font size="15.0" />
@@ -102,7 +101,10 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </JFXButton>
-         <ListView fx:id="listview" layoutX="38.0" layoutY="143.0" onEditCommit="#Submit" onMouseClicked="#mouseclick" onMousePressed="#mouseclick" prefHeight="400.0" prefWidth="203.0" />
+         <ListView fx:id="listview" focusTraversable="false" layoutX="25.0" layoutY="138.0" onEditCommit="#Submit" onMouseClicked="#mouseclick" onMousePressed="#mouseclick" prefHeight="411.0" prefWidth="221.0" style="-fx-background-radius: 10;">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></ListView>
 
       </children>
    </Group>

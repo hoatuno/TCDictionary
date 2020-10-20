@@ -59,7 +59,7 @@ public class Controller {
 
     public void translate(ActionEvent event) throws IOException {
         TranslatorAPI translatorAPI = new TranslatorAPI();
-        String answer = translatorAPI.result(jfxtect.getText()); // the cai nao tra ve string
+        String answer = translatorAPI.processor(jfxtect.getText()); // the cai nao tra ve string
         myWord.setText(answer);
     }
 

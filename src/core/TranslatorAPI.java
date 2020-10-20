@@ -37,46 +37,56 @@ public class TranslatorAPI {
         return beautifyResponse;
     }
 
-    public String result(String toFind) throws IOException {
-        String preprocessedString = TranslationRequest.makePOSTcalls(toFind);
-        String detectedlanguage = preprocessedString.substring(34, 36);
-        int notationleft = 14;
-        String meaning = "";
+    public String processor(String toFind) throws IOException {
+        String[] splitstr = toFind.split("\n");
         String res = "";
-        char[] chararr = preprocessedString.toCharArray();
-        for (int i = 0; i < chararr.length; i++) {
-            if (chararr[i] == '"') notationleft--;
+        for (int i=0; i<splitstr.length; i++){
+            String preprocessedString = TranslationRequest.makePOSTcalls(splitstr[i]);
+            int notationleft = 14;
+            String meaning = "";
+            char[] chararr = preprocessedString.toCharArray();
+            for (int j = 0; j < chararr.length; j++) {
+                if (chararr[j] == '"') notationleft--;
 
-            if (notationleft == 1) {
-                meaning += chararr[i];
+                if (notationleft == 1) {
+                    meaning += chararr[j];
+                }
+                if (notationleft == 0) break;
             }
-            if (notationleft == 0) break;
+            meaning += '"';
+            res += meaning + "\n";
         }
-        meaning += '"';
-        res += detectedlanguage + " " + meaning;
-        return res;
+        int l = res.length();
+        String tmp = "";
+        tmp+= '"';
+        String realres = res.replaceAll(tmp,"");
+        return realres;
 
     }
 
     // This function performs a simple POST call to Microsoft Translator Text Endpoint.
     public String makePOSTcalls(String word) throws IOException {
-        String ctnt = "[{\n\t\"Text\": \"" + word + "\"\n}]";
-        // An RFC 2045 Media Type, appropriate to describe the content type of an HTTP request or response body.
-        MediaType mediaType = MediaType.parse("application/json");
+//        String endline = "\n";
+//        if (word.equals(endline)) return endline;
 
-        RequestBody requestBody = RequestBody.create(mediaType,
-                ctnt);
+            String ctnt = "[{\n\t\"Text\": \"" + word + "\"\n}]";
+            // An RFC 2045 Media Type, appropriate to describe the content type of an HTTP request or response body.
+            MediaType mediaType = MediaType.parse("application/json");
 
-        // An HTTP request. Instances of this class are immutable if their body is null or itself immutable.
-        Request dictRequest = new Request.Builder().url(translatorURL).post(requestBody)
-                .addHeader("Ocp-Apim-Subscription-Key", microsoftBingAPIKey).addHeader("Content-type", "application/json").build();
+            RequestBody requestBody = RequestBody.create(mediaType,
+                    ctnt);
 
-        // An HTTP response. Instances of this class are not immutable: the response body is a one-shot value that may be consumed only once and then closed.
-        // All other properties are immutable.
+            // An HTTP request. Instances of this class are immutable if their body is null or itself immutable.
+            Request dictRequest = new Request.Builder().url(translatorURL).post(requestBody)
+                    .addHeader("Ocp-Apim-Subscription-Key", microsoftBingAPIKey).addHeader("Content-type", "application/json").build();
 
-        Response servResponse = dictClient.newCall(dictRequest).execute();
+            // An HTTP response. Instances of this class are not immutable: the response body is a one-shot value that may be consumed only once and then closed.
+            // All other properties are immutable.
 
-        return servResponse.body().string();
-    }
+            Response servResponse = dictClient.newCall(dictRequest).execute();
+
+            return servResponse.body().string();
+        }
+
 
 }
